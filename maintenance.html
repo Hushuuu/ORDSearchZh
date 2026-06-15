@@ -26,7 +26,7 @@
     <section class="panel">
       <div class="panel-header">
         <h1 class="panel-title">資料維護</h1>
-        <p class="panel-desc">左側挑資料，右側改欄位。材料用搜尋選單加入，可重複 append；適合夥伴也改成可搜尋的多選介面。</p>
+        <p class="panel-desc"></p>
       </div>
       <div class="panel-body">
         <div class="page-grid">
@@ -84,7 +84,7 @@
               </label>
 
               <label class="field-group full-span">
-                <span class="field-label">materials（搜尋後加入）</span>
+                <span class="field-label">組成材料</span>
                 <div class="picker-shell">
                   <div class="picker-inline">
                     <select id="materialPickerSelect" class="field-select"></select>
@@ -95,17 +95,17 @@
               </label>
 
               <label class="field-group full-span">
-                <span class="field-label">suitable_partners（可搜尋多選）</span>
+                <span class="field-label">適合搭配角色</span>
                 <select id="partnerPickerSelect" class="field-select" multiple></select>
               </label>
             </div>
 
             <div class="controls-actions" style="margin-top: 18px;">
-              <button id="saveRecordButton" type="button" class="success">儲存目前資料</button>
-              <button id="addRecordButton" type="button">新增資料</button>
-              <button id="deleteRecordButton" type="button" class="danger">刪除資料</button>
+              <button id="saveRecordButton" type="button" class="success">暫存</button>
+              <button id="addRecordButton" type="button">新增一筆</button>
+              <button id="deleteRecordButton" type="button" class="danger">刪除此筆</button>
               <button id="exportJsonButton" type="button" class="secondary">匯出 JSON</button>
-              <button id="resetToastButton" type="button" class="secondary">清除訊息</button>
+              <button style="display:none" id="resetToastButton" type="button" class="secondary">清除訊息</button>
             </div>
 
             <div id="maintenanceToast" class="toast"></div>

@@ -1,5 +1,5 @@
 const LEVEL_LABELS = {
-  0: '素材/別名',
+  0: '素材/未知',
   1: '常見',
   2: '不平凡',
   3: '特別',
@@ -342,11 +342,12 @@ function initTreePage(records) {
         valueField: 'value',
         labelField: 'label',
         searchField: ['label', 'value', 'kr_name', 'en_name'],
-        maxOptions: 150,
+        maxOptions: 400,
         create: false,
         persist: false,
         placeholder: '搜尋角色名稱或 character_id',
-        render: createTomSelectRenderConfig()
+        render: createTomSelectRenderConfig(),
+        dropdownParent: 'body',
       })
     : null;
   let selectedCharacterId = '';
@@ -610,7 +611,7 @@ function initMaintenancePage(records) {
         maxOptions: 150,
         create: false,
         persist: false,
-        placeholder: '搜尋材料名稱或 material_id',
+        placeholder: '搜尋名稱或 id',
         render: createTomSelectRenderConfig()
       })
     : null;
@@ -626,7 +627,7 @@ function initMaintenancePage(records) {
         create: false,
         persist: false,
         plugins: ['remove_button'],
-        placeholder: '搜尋並選擇適合夥伴',
+        placeholder: '選擇適合夥伴',
         render: createTomSelectRenderConfig()
       })
     : null;
@@ -879,7 +880,7 @@ function initMaintenancePage(records) {
     });
 
     clearToast(toast);
-    showToast(toast, 'success', '已更新目前資料。');
+    showToast(toast, 'success', '已更新。最後記得要匯出JSON檔！');
     syncMaintenancePickers();
     renderList();
     fillForm();
@@ -919,7 +920,7 @@ function initMaintenancePage(records) {
 
     state.records = state.records.filter((item) => item.character_id !== record.character_id);
     state.selectedRecordId = state.records[0]?.character_id || null;
-    showToast(toast, 'success', '已刪除資料。');
+    showToast(toast, 'success', '已刪除資料。最後記得要匯出JSON檔！');
     syncMaintenancePickers();
     renderList();
     fillForm();

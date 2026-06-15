@@ -208,7 +208,14 @@ button.success {
 }
 
 .ts-wrapper {
+  width: 100%;
   min-height: 46px;
+}
+
+/* 1. 確保外層控制器的內容物垂直居中 */
+.ts-wrapper .ts-control {
+  display: flex !important;
+  align-items: center !important;
 }
 
 .ts-wrapper.single .ts-control,
