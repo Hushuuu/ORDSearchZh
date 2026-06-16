@@ -52,6 +52,10 @@ textarea {
   font: inherit;
 }
 
+.link-button{
+  /* width: 60px; */
+}
+
 button,
 .link-button {
   border: none;
@@ -651,7 +655,7 @@ button.success {
   left: -12px;
   width: 10px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.22);
+  background: #FFFFBB;
 }
 
 .tree-list > li::after,
@@ -662,7 +666,7 @@ button.success {
   left: -12px;
   width: 1px;
   height: calc(100% + 14px);
-  background: rgba(255, 255, 255, 0.12);
+  background: #FFFFBB;
 }
 
 .tree-list > li:last-child::after,

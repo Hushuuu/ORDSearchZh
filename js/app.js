@@ -1,5 +1,5 @@
 const LEVEL_LABELS = {
-  0: '素材/未知',
+  0: '物品',
   1: '常見',
   2: '不平凡',
   3: '特別',
@@ -153,20 +153,20 @@ function createNameStack(record) {
   );
 
   if (record.en_name) {
-    lines.push(`<span class="name-secondary">EN：${escapeHtml(record.en_name)}</span>`);
+    lines.push(`<span class="name-secondary">${escapeHtml(record.en_name)}</span>`);
   }
 
   if (record.kr_name) {
-    lines.push(`<span class="name-secondary">KR：${escapeHtml(record.kr_name)}</span>`);
+    lines.push(`<span class="name-secondary">${escapeHtml(record.kr_name)}</span>`);
   }
 
-  lines.push(`<span class="name-secondary">ID：${escapeHtml(record.character_id)}</span>`);
+  // lines.push(`<span class="name-secondary">ID：${escapeHtml(record.character_id)}</span>`);
   return `<div class="name-stack">${lines.join('')}</div>`;
 }
 
 function createMaterialChips(record, indices) {
   if (!record.materials || record.materials.length === 0) {
-    return '<span class="muted">無需材料</span>';
+    return '<span class="muted">-</span>';
   }
 
   return `<div class="chip-group">${record.materials
@@ -292,11 +292,11 @@ function initQuickLookup(records) {
             <td data-label="稀有度"><span class="badge badge-${record.level}">${escapeHtml(getLevelLabel(record.level))}</span></td>
             <td data-label="單位名稱">${createNameStack(record)}</td>
             <td data-label="所需材料">${createMaterialChips(record, indices)}</td>
-            <td data-label="金鑰">${record.key_code ? escapeHtml(record.key_code) : '<span class="muted">未填寫</span>'}</td>
-            <td data-label="備註">${record.remark ? escapeHtml(record.remark) : '<span class="muted">未填寫</span>'}</td>
+            <td data-label="金鑰">${record.key_code ? escapeHtml(record.key_code) : '<span class="muted">-</span>'}</td>
+            <td data-label="備註">${record.remark ? escapeHtml(record.remark) : '<span class="muted">-</span>'}</td>
             <td data-label="功能">
               <div class="inline-actions">
-                <a class="link-button" href="tree.html?character=${encodeURIComponent(record.character_id)}">合成樹</a>
+                <a class="link-button" href="tree.html?character=${encodeURIComponent(record.character_id)}"><img style="vertical-align: middle"  width="25" height="20" src="resource/mitre.svg" alt="合成樹"></a>
               </div>
             </td>
           </tr>
@@ -399,7 +399,7 @@ function initTreePage(records) {
           ${titleMarkup}
         </div>
         <div class="node-detail">
-          <div>角色 ID：${escapeHtml(record.character_id)}</div>
+          <div style="display:none">角色 ID：${escapeHtml(record.character_id)}</div>
           <div>材料：${escapeHtml(getMaterialNames(record, indices).join('、') || '無')}</div>
         </div>
       </div>
@@ -438,7 +438,9 @@ function initTreePage(records) {
         <details class="branch-details">
           <summary class="branch-summary">
             ${renderNodeCard(record)}
-            <span class="branch-toggle-hint">${depth === 1 ? '點擊展開下一層' : '點擊收合 / 展開'}</span>
+            <span class="branch-toggle-hint">
+              <img style="vertical-align: middle" width="25" height="25" src="resource/arrow_drop_down.svg" alt="${depth === 1 ? '點擊收合 / 展開' : '點擊收合 / 展開'}">
+            </span>
           </summary>
           <ul class="tree-list">${childrenMarkup}</ul>
         </details>
@@ -452,17 +454,17 @@ function initTreePage(records) {
     upwardContainer.classList.add('is-hidden');
 
     if (parents.length === 0) {
-      toggleUpwardButton.textContent = '此角色沒有向上 1 層配方';
+      toggleUpwardButton.textContent = '此角色沒有上層';
       toggleUpwardButton.disabled = true;
       upwardContainer.innerHTML = '<div class="empty-state">目前沒有找到以上位為材料的配方。</div>';
       return;
     }
 
     toggleUpwardButton.disabled = false;
-    toggleUpwardButton.textContent = `顯示向上 1 層（${parents.length} 筆）`;
+    toggleUpwardButton.textContent = `顯示上層（${parents.length} 筆）`;
     upwardContainer.innerHTML = `
       <div class="upward-card">
-        <h3>向上 1 層</h3>
+        <h3>上層<span>(點擊角色可跳轉)</span></h3>
         <ul class="upward-list">
           ${parents.map((parent) => `<li>${renderNodeCard(parent, { navigateable: true })}</li>`).join('')}
         </ul>
@@ -472,28 +474,29 @@ function initTreePage(records) {
 
   function renderTree(record) {
     selectedCharacterId = record.character_id;
-    resultTitle.textContent = `${record.name}｜${getLevelLabel(record.level)}`;
+    const characterNameText = `${record.name}｜${getLevelLabel(record.level)} | KR: ${escapeHtml(record.kr_name || '')} | EN: ${escapeHtml(record.en_name || '')}`;
+    resultTitle.textContent = characterNameText;
     if (treeSelect) {
       syncTreeSelectOptions(record.character_id);
     }
     rootSummary.innerHTML = `
       <div class="tree-card">
-        <h3>起點資訊</h3>
         <div class="node-detail">
-          <div>角色 ID：${escapeHtml(record.character_id)}</div>
-          <div>韓文：${escapeHtml(record.kr_name || '未填寫')}</div>
-          <div>英文：${escapeHtml(record.en_name || '未填寫')}</div>
-          <div>材料：${escapeHtml(getMaterialNames(record, indices).join('、') || '無')}</div>
-          <div>備註：${escapeHtml(record.remark || '未填寫')}</div>
+          <div style="display:none">角色 ID：${escapeHtml(record.character_id)}</div>
+          <div style="display:none">KR：${escapeHtml(record.kr_name || '未填寫')}</div>
+          <div style="display:none">EN：${escapeHtml(record.en_name || '未填寫')}</div>
+          <div style="display:none">材料：${escapeHtml(getMaterialNames(record, indices).join('、') || '無')}</div>
+          <div>金鑰：${record.key_code || ''}</div>
+          <div>備註：${escapeHtml(record.remark || '')}</div>
         </div>
       </div>
     `;
     const directMaterials = record.materials || [];
     downwardContainer.innerHTML = `
       <div class="tree-card">
-        <h3>往下展開</h3>
+        <h3>點擊往下展開</h3>
         ${directMaterials.length === 0
-          ? '<div class="empty-state">這個角色沒有可往下展開的材料。</div>'
+          ? '<div class="empty-state">這個角色沒有可往下的材料。</div>'
           : `<ul class="tree-list">${directMaterials
               .map((material) => {
                 const childRecord = getPrimaryRecord(material.material_id, indices);
@@ -742,9 +745,12 @@ function initMaintenancePage(records) {
           <button type="button" class="record-list-button ${record.character_id === state.selectedRecordId ? 'active' : ''}" data-character-id="${escapeHtml(record.character_id)}">
             <strong>${escapeHtml(record.name)}</strong>
             <div class="record-meta">
+              <span>${escapeHtml(record.kr_name || '')}</span>
+              <span>${escapeHtml(record.en_name || '')}</span>
+            </div>
+            <div class="record-meta">
               <span>${escapeHtml(getLevelLabel(record.level))}</span>
               <span>${escapeHtml(record.character_id)}</span>
-              <span>${record.level === 0 ? 'level 0' : '正式資料'}</span>
             </div>
           </button>
         `
