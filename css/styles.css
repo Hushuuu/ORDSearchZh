@@ -10,20 +10,22 @@
   --danger-color: #ef4444;
   --success-color: #22c55e;
   --shadow-color: rgba(0, 0, 0, 0.28);
+  --badge-placeholder: #475569;
   --badge-common: #6b7280;
   --badge-uncommon: #4b5563;
-  --badge-special: #8b5cf6;
-  --badge-rare: #3b82f6;
-  --badge-legendary: #2563eb;
-  --badge-hidden: #10b981;
-  --badge-twisted: #65a30d;
-  --badge-evolving: #64748b;
+  --badge-special: #d59700;
+  --badge-rare: #9932cc;
+  --badge-legendary: #fd292a;
+  --badge-hidden: #009eef;
+  --badge-twisted: #914540;
+  --badge-evolving: #264cf7;
   --badge-limited: #7c3aed;
-  --badge-transcendent: #f97316;
-  --badge-immortal: #dc2626;
+  --badge-transcendent: #1111fe;
+  --badge-immortal: #fa8072;
   --badge-eternal: #06b6d4;
-  --badge-mystic: #db2777;
-  --badge-placeholder: #475569;
+  --badge-mystic: #3e5582;
+  --badge-random-only: #4169c3;
+  --badge-seraph: #1c9c87;
 }
 
 * {
@@ -416,6 +418,7 @@ button.success {
   color: #fff;
 }
 
+.badge-0 { background: var(--badge-placeholder); }
 .badge-1 { background: var(--badge-common); }
 .badge-2 { background: var(--badge-uncommon); }
 .badge-3 { background: var(--badge-special); }
@@ -428,8 +431,9 @@ button.success {
 .badge-10 { background: var(--badge-transcendent); }
 .badge-11 { background: var(--badge-immortal); }
 .badge-12 { background: var(--badge-eternal); }
+.badge-16 { background: var(--badge-random-only); }
 .badge-18 { background: var(--badge-mystic); }
-.badge-0 { background: var(--badge-placeholder); }
+.badge-23 { background: var(--badge-seraph); }
 
 .chip-group {
   display: flex;
