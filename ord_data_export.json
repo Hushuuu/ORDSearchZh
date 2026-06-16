@@ -432,7 +432,7 @@
     "en_name": "",
     "materials": [],
     "key_code": "",
-    "remark": "",
+    "remark": "賭博或使用月光摩利亞殺怪取得?",
     "major": "",
     "suitable_partners": []
   },
@@ -479,7 +479,7 @@
     "level": 3,
     "name": "尤斯塔斯·基德",
     "kr_name": "",
-    "en_name": "",
+    "en_name": "Kid",
     "materials": [
       {
         "material_id": "2-9"
@@ -521,8 +521,8 @@
   {
     "character_id": "3-3",
     "level": 3,
-    "name": "巴其 砲彈",
-    "kr_name": "巴其",
+    "name": "巴其 特製巴其彈",
+    "kr_name": "버기 특제 마기탄",
     "en_name": "",
     "materials": [
       {
@@ -741,9 +741,9 @@
   {
     "character_id": "3-13",
     "level": 3,
-    "name": "波特卡斯·D·艾斯 白鬍子海賊團 2번대대장",
+    "name": "波特卡斯·D·艾斯 白鬍子海賊團",
     "kr_name": "",
-    "en_name": "",
+    "en_name": "Ace",
     "materials": [
       {
         "material_id": "2-5"
@@ -763,8 +763,8 @@
   {
     "character_id": "3-14",
     "level": 3,
-    "name": "阿布薩羅姆",
-    "kr_name": "",
+    "name": "阿布薩羅姆 隱形果實",
+    "kr_name": "압살롬 투명인간",
     "en_name": "",
     "materials": [
       {
@@ -810,8 +810,8 @@
   {
     "character_id": "3-16",
     "level": 3,
-    "name": "香吉士 特別",
-    "kr_name": "香吉士",
+    "name": "香吉士 黑足",
+    "kr_name": "상디 검은다리",
     "en_name": "",
     "materials": [
       {
@@ -1163,7 +1163,7 @@
     "character_id": "3-32",
     "level": 3,
     "name": "騙人布 火焰星",
-    "kr_name": "騙人布",
+    "kr_name": "우솝 화염탄",
     "en_name": "",
     "materials": [
       {
@@ -1205,7 +1205,7 @@
     "level": 4,
     "name": "尤斯塔斯·基德 船長",
     "kr_name": "",
-    "en_name": "",
+    "en_name": "Kid",
     "materials": [
       {
         "material_id": "3-1"
@@ -2185,7 +2185,7 @@
   {
     "character_id": "5-1",
     "level": 5,
-    "name": "天月時 時夫人",
+    "name": "光月時 時夫人",
     "kr_name": "",
     "en_name": "",
     "materials": [
@@ -2574,7 +2574,7 @@
   {
     "character_id": "5-15",
     "level": 5,
-    "name": "皇 (KING) 傳說",
+    "name": "燼 (KING)",
     "kr_name": "",
     "en_name": "",
     "materials": [
@@ -2769,7 +2769,7 @@
   {
     "character_id": "5-21",
     "level": 5,
-    "name": "烏爾堤",
+    "name": "烏爾堤 飛六胞",
     "kr_name": "울티",
     "en_name": "",
     "materials": [
@@ -3294,7 +3294,7 @@
   {
     "character_id": "5-39",
     "level": 5,
-    "name": "香克斯 皇帝",
+    "name": "香克斯 四皇",
     "kr_name": "샹크스 사황 '붉은머리'",
     "en_name": "",
     "materials": [
@@ -3510,7 +3510,7 @@
   {
     "character_id": "6-8",
     "level": 6,
-    "name": "雨之希留 隱藏",
+    "name": "雨之希留",
     "kr_name": "비의 시류 검은 수염 해적단 부선장",
     "en_name": "",
     "materials": [
@@ -3873,9 +3873,9 @@
   {
     "character_id": "7-1",
     "level": 7,
-    "name": "可雅拉 革命軍",
+    "name": "可亞拉 克爾拉 革命軍",
     "kr_name": "코알라",
-    "en_name": "",
+    "en_name": "Koala",
     "materials": [
       {
         "material_id": "5-7"
@@ -3888,25 +3888,19 @@
       },
       {
         "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "koala",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
   {
     "character_id": "7-2",
     "level": 7,
-    "name": "昆因",
+    "name": "奎因 三災",
     "kr_name": "퀸",
-    "en_name": "",
+    "en_name": "Queen",
     "materials": [
       {
         "material_id": "5-15"
@@ -3919,25 +3913,19 @@
       },
       {
         "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "queen",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
   {
     "character_id": "7-3",
     "level": 7,
-    "name": "黑色瑪利亞 誘惑",
-    "kr_name": "黑色瑪麗亞",
-    "en_name": "",
+    "name": "黑瑪利亞 誘惑",
+    "kr_name": "블랙마리아",
+    "en_name": "Black Maria",
     "materials": [
       {
         "material_id": "7-3"
@@ -3950,16 +3938,10 @@
       },
       {
         "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "blackmaria",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -3968,7 +3950,7 @@
     "level": 7,
     "name": "巴吉斯",
     "kr_name": "왜곡됨",
-    "en_name": "",
+    "en_name": "Burgess",
     "materials": [
       {
         "material_id": "6-19"
@@ -3984,16 +3966,10 @@
       },
       {
         "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "burgess",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -4002,7 +3978,7 @@
     "level": 7,
     "name": "艾斯 炎帝",
     "kr_name": "",
-    "en_name": "",
+    "en_name": "Ace",
     "materials": [
       {
         "material_id": "5-9"
@@ -4015,16 +3991,10 @@
       },
       {
         "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "ace",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -4033,7 +4003,7 @@
     "level": 7,
     "name": "培羅娜",
     "kr_name": "",
-    "en_name": "",
+    "en_name": "Perona",
     "materials": [
       {
         "material_id": "5-5"
@@ -4052,16 +4022,10 @@
       },
       {
         "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "perona",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -4108,7 +4072,7 @@
     "level": 8,
     "name": "薇薇",
     "kr_name": "비비 알라바스타의 왕녀",
-    "en_name": "",
+    "en_name": "Vivi",
     "materials": [
       {
         "material_id": "4-35"
@@ -4297,7 +4261,7 @@
   {
     "character_id": "9-6",
     "level": 9,
-    "name": "皇 (KING)",
+    "name": "燼 (KING) 三災",
     "kr_name": "킹",
     "en_name": "",
     "materials": [
@@ -4587,9 +4551,9 @@
   {
     "character_id": "10-10",
     "level": 10,
-    "name": "基德",
+    "name": "尤斯塔斯·基德",
     "kr_name": "키드",
-    "en_name": "",
+    "en_name": "Kid",
     "materials": [
       {
         "material_id": "5-35"
@@ -5680,7 +5644,7 @@
     "level": 12,
     "name": "卡文迪許",
     "kr_name": "카번딧슈",
-    "en_name": "",
+    "en_name": "Cavendish",
     "materials": [
       {
         "material_id": "5-8"
@@ -5708,7 +5672,7 @@
     "level": 12,
     "name": "光月御田",
     "kr_name": "오뎅",
-    "en_name": "",
+    "en_name": "Oden",
     "materials": [
       {
         "material_id": "5-1"
@@ -5736,7 +5700,7 @@
     "level": 12,
     "name": "美音 (Uta)",
     "kr_name": "우타",
-    "en_name": "",
+    "en_name": "Uta",
     "materials": [
       {
         "material_id": "5-39"
@@ -5758,10 +5722,13 @@
       },
       {
         "material_id": "0-1"
+      },
+      {
+        "material_id": "0-7"
       }
     ],
     "key_code": "u-ta et",
-    "remark": "特殊物品耳機 + 木*5",
+    "remark": "耳機 + 木*5",
     "major": "",
     "suitable_partners": []
   },
@@ -5820,7 +5787,7 @@
     "level": 12,
     "name": "薇薇",
     "kr_name": "",
-    "en_name": "",
+    "en_name": "Vivi",
     "materials": [
       {
         "material_id": "9-9"
@@ -5953,7 +5920,7 @@
     "level": 12,
     "name": "艾斯",
     "kr_name": "",
-    "en_name": "",
+    "en_name": "Ace",
     "materials": [
       {
         "material_id": "7-5"
