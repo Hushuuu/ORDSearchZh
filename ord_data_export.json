@@ -478,7 +478,7 @@
     "character_id": "3-1",
     "level": 3,
     "name": "尤斯塔斯·基德",
-    "kr_name": "",
+    "kr_name": "유스타스 키드 초신성",
     "en_name": "Kid",
     "materials": [
       {
@@ -500,7 +500,7 @@
     "character_id": "3-2",
     "level": 3,
     "name": "巴吉魯·霍金斯",
-    "kr_name": "",
+    "kr_name": "바질 호킨스 초신성",
     "en_name": "",
     "materials": [
       {
@@ -544,7 +544,7 @@
     "character_id": "3-4",
     "level": 3,
     "name": "巴索羅繆·大熊",
-    "kr_name": "",
+    "kr_name": "바솔로뮤 쿠마 칠무해",
     "en_name": "",
     "materials": [
       {
@@ -566,7 +566,7 @@
     "character_id": "3-5",
     "level": 3,
     "name": "月光·摩利亞",
-    "kr_name": "",
+    "kr_name": "겟코 모리아 칠무해",
     "en_name": "",
     "materials": [
       {
@@ -588,7 +588,7 @@
     "character_id": "3-6",
     "level": 3,
     "name": "卡波涅·培基",
-    "kr_name": "",
+    "kr_name": "카포네 갱 벳지 초신성",
     "en_name": "",
     "materials": [
       {
@@ -610,7 +610,7 @@
     "character_id": "3-7",
     "level": 3,
     "name": "史庫亞德 大漩渦蜘蛛",
-    "kr_name": "",
+    "kr_name": "스쿼드 흰수염산하 소용돌이 거미",
     "en_name": "",
     "materials": [
       {
@@ -631,8 +631,8 @@
   {
     "character_id": "3-8",
     "level": 3,
-    "name": "吉貝爾 甚平",
-    "kr_name": "",
+    "name": "吉貝爾 甚平 七武海",
+    "kr_name": "징베 칠무해",
     "en_name": "",
     "materials": [
       {
@@ -654,7 +654,7 @@
     "character_id": "3-9",
     "level": 3,
     "name": "托拉法爾加·羅",
-    "kr_name": "",
+    "kr_name": "트라팔가 로우 초신성",
     "en_name": "",
     "materials": [
       {
@@ -675,8 +675,8 @@
   {
     "character_id": "3-10",
     "level": 3,
-    "name": "克洛克達爾",
-    "kr_name": "",
+    "name": "克洛克達爾 七武海",
+    "kr_name": "크로커 다일 전 칠무해",
     "en_name": "",
     "materials": [
       {
@@ -698,7 +698,7 @@
     "character_id": "3-11",
     "level": 3,
     "name": "克洛船長",
-    "kr_name": "",
+    "kr_name": "캡틴 크로 백계",
     "en_name": "",
     "materials": [
       {
@@ -720,7 +720,7 @@
     "character_id": "3-12",
     "level": 3,
     "name": "妮可·羅賓 歐哈拉的惡魔",
-    "kr_name": "",
+    "kr_name": "니코 로빈 오하라의 악마",
     "en_name": "",
     "materials": [
       {
@@ -742,7 +742,7 @@
     "character_id": "3-13",
     "level": 3,
     "name": "波特卡斯·D·艾斯 白鬍子海賊團",
-    "kr_name": "",
+    "kr_name": "포트거스 · D · 에이스 흰수염 해적단 2번대대장",
     "en_name": "Ace",
     "materials": [
       {
@@ -789,7 +789,7 @@
     "character_id": "3-15",
     "level": 3,
     "name": "洽卡 阿拉巴斯坦守護神",
-    "kr_name": "",
+    "kr_name": "챠카 알라바스타의 수호신",
     "en_name": "",
     "materials": [
       {
@@ -832,8 +832,8 @@
   {
     "character_id": "3-17",
     "level": 3,
-    "name": "娜美 大風車",
-    "kr_name": "娜美",
+    "name": "娜美 天候棒",
+    "kr_name": "나미 크리마 텍트",
     "en_name": "",
     "materials": [
       {
@@ -854,8 +854,8 @@
   {
     "character_id": "3-18",
     "level": 3,
-    "name": "海賊合體5號 佛朗基",
-    "kr_name": "",
+    "name": "海賊合體5號 機器人",
+    "kr_name": "파이러츠 도킹 5 거대 로봇 전사",
     "en_name": "",
     "materials": [
       {
@@ -877,14 +877,11 @@
     "character_id": "3-19",
     "level": 3,
     "name": "神·艾涅爾",
-    "kr_name": "",
+    "kr_name": "갓 에넬 하늘섬의 가짜신",
     "en_name": "",
     "materials": [
       {
-        "material_id": "1-9"
-      },
-      {
-        "material_id": "1-9"
+        "material_id": "2-6"
       },
       {
         "material_id": "2-8"
@@ -902,7 +899,7 @@
     "character_id": "3-20",
     "level": 3,
     "name": "索隆 阿修羅",
-    "kr_name": "",
+    "kr_name": "롤로노아 조로 귀기",
     "en_name": "",
     "materials": [
       {
@@ -924,7 +921,7 @@
     "character_id": "3-21",
     "level": 3,
     "name": "雷電 革命軍",
-    "kr_name": "",
+    "kr_name": "이나즈마 혁명군",
     "en_name": "",
     "materials": [
       {
@@ -965,7 +962,7 @@
     "character_id": "3-23",
     "level": 3,
     "name": "基拉",
-    "kr_name": "",
+    "kr_name": "킬러 초신성",
     "en_name": "",
     "materials": [
       {
@@ -987,7 +984,7 @@
     "character_id": "3-24",
     "level": 3,
     "name": "喬巴 皮毛強化",
-    "kr_name": "喬巴",
+    "kr_name": "토니토니 쵸파 가드 포인트",
     "en_name": "",
     "materials": [
       {
@@ -1009,7 +1006,7 @@
     "character_id": "3-25",
     "level": 3,
     "name": "喬巴 頭腦強化",
-    "kr_name": "喬巴",
+    "kr_name": "토니토니 쵸파 두뇌 강화",
     "en_name": "",
     "materials": [
       {
@@ -1031,7 +1028,7 @@
     "character_id": "3-26",
     "level": 3,
     "name": "惡龍",
-    "kr_name": "아론",
+    "kr_name": "아론 어인해적단 선장",
     "en_name": "",
     "materials": [
       {
@@ -1053,7 +1050,7 @@
     "character_id": "3-27",
     "level": 3,
     "name": "斯摩格",
-    "kr_name": "",
+    "kr_name": "스모커 해군 준장",
     "en_name": "",
     "materials": [
       {
@@ -1075,7 +1072,7 @@
     "character_id": "3-28",
     "level": 3,
     "name": "馮·克雷 Mr.2",
-    "kr_name": "",
+    "kr_name": "봉쿠레 Mr.2",
     "en_name": "",
     "materials": [
       {
@@ -1097,7 +1094,7 @@
     "character_id": "3-29",
     "level": 3,
     "name": "赫爾梅波 貝魯梅伯",
-    "kr_name": "",
+    "kr_name": "441 - 444 헤르메포 해군",
     "en_name": "Helmeppo",
     "materials": [
       {
@@ -1140,8 +1137,8 @@
   {
     "character_id": "3-31",
     "level": 3,
-    "name": "羅布·路基",
-    "kr_name": "",
+    "name": "羅布·路基 CP9",
+    "kr_name": "로브 루치 CP9 도력 4000",
     "en_name": "",
     "materials": [
       {
@@ -1182,8 +1179,8 @@
     "character_id": "3-33",
     "level": 3,
     "name": "X-德瑞克",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "X-드레이크 초신성",
+    "en_name": "X DRAKE",
     "materials": [
       {
         "material_id": "2-11"
@@ -1204,17 +1201,17 @@
     "character_id": "4-1",
     "level": 4,
     "name": "尤斯塔斯·基德 船長",
-    "kr_name": "",
+    "kr_name": "유스타스 키드 '캡틴'키드",
     "en_name": "Kid",
     "materials": [
       {
         "material_id": "3-1"
       },
       {
-        "material_id": "8-4"
+        "material_id": "3-23"
       },
       {
-        "material_id": "3-23"
+        "material_id": "3-17"
       }
     ],
     "key_code": "",
@@ -1226,7 +1223,7 @@
     "character_id": "4-3",
     "level": 4,
     "name": "巴吉斯",
-    "kr_name": "바제스",
+    "kr_name": "바제스 검은수염해적단 선원",
     "en_name": "",
     "materials": [
       {
@@ -1248,7 +1245,7 @@
     "character_id": "4-4",
     "level": 4,
     "name": "巴吉魯·霍金斯 稻草人",
-    "kr_name": "",
+    "kr_name": "바질 호킨스 스트로맨",
     "en_name": "",
     "materials": [
       {
@@ -1270,7 +1267,7 @@
     "character_id": "4-5",
     "level": 4,
     "name": "巴托洛米奧",
-    "kr_name": "",
+    "kr_name": "바르토로메오 밀짚모자 해적단 광신도",
     "en_name": "",
     "materials": [
       {
@@ -1292,8 +1289,8 @@
     "character_id": "4-6",
     "level": 4,
     "name": "卡普",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "거프 해군 영웅",
+    "en_name": "GARP",
     "materials": [
       {
         "material_id": "3-27"
@@ -1326,7 +1323,7 @@
     "character_id": "4-8",
     "level": 4,
     "name": "布魯克 音樂家",
-    "kr_name": "",
+    "kr_name": "브룩 해골 음악가",
     "en_name": "",
     "materials": [
       {
@@ -1348,7 +1345,7 @@
     "character_id": "4-9",
     "level": 4,
     "name": "安布里歐·伊娃柯夫",
-    "kr_name": "",
+    "kr_name": "엠포리오 이완코브 혁명군",
     "en_name": "",
     "materials": [
       {
@@ -1370,7 +1367,7 @@
     "character_id": "4-10",
     "level": 4,
     "name": "托拉法爾加·羅 死亡外科醫生",
-    "kr_name": "",
+    "kr_name": "트라팔가 로우 죽음의 외과의사",
     "en_name": "",
     "materials": [
       {
@@ -1436,11 +1433,11 @@
     "character_id": "4-13",
     "level": 4,
     "name": "波雅·漢考克",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "보아 핸콕 칠무해",
+    "en_name": "Hancock",
     "materials": [
       {
-        "material_id": "8-4"
+        "material_id": "3-17"
       },
       {
         "material_id": "3-26"
@@ -1458,7 +1455,7 @@
     "character_id": "4-14",
     "level": 4,
     "name": "波魯薩利諾 黃猿",
-    "kr_name": "",
+    "kr_name": "보르살리노 해군대장",
     "en_name": "",
     "materials": [
       {
@@ -1480,8 +1477,8 @@
     "character_id": "4-15",
     "level": 4,
     "name": "砂糖",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "슈가 도플패밀리 최고 간부",
+    "en_name": "Sugar",
     "materials": [
       {
         "material_id": "3-25"
@@ -1505,8 +1502,8 @@
     "character_id": "4-16",
     "level": 4,
     "name": "紅髮傑克 香克斯",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "샹크스 붉은머리 해적단 선장",
+    "en_name": "Shanks",
     "materials": [
       {
         "material_id": "3-3"
@@ -1527,11 +1524,11 @@
     "character_id": "4-17",
     "level": 4,
     "name": "香吉士 惡魔風腳",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "상디 디아블 잠브",
+    "en_name": "Sanji",
     "materials": [
       {
-        "material_id": "1-3"
+        "material_id": "3-16"
       },
       {
         "material_id": "3-24"
@@ -1549,7 +1546,7 @@
     "character_id": "4-18",
     "level": 4,
     "name": "哲普主廚",
-    "kr_name": "",
+    "kr_name": "제프 해상 레스토랑 쉐프",
     "en_name": "",
     "materials": [
       {
@@ -1570,8 +1567,8 @@
   {
     "character_id": "4-19",
     "level": 4,
-    "name": "唐吉訶德·多佛朗明哥",
-    "kr_name": "",
+    "name": "唐吉訶德·多佛朗明哥 七武海",
+    "kr_name": "돈키호테 도플라밍고 칠무해",
     "en_name": "",
     "materials": [
       {
@@ -1590,32 +1587,10 @@
     "suitable_partners": []
   },
   {
-    "character_id": "4-20",
-    "level": 4,
-    "name": "娜美 天候棒",
-    "kr_name": "크리마텍트",
-    "en_name": "",
-    "materials": [
-      {
-        "material_id": "1-4"
-      },
-      {
-        "material_id": "3-14"
-      },
-      {
-        "material_id": "1-2"
-      }
-    ],
-    "key_code": "",
-    "remark": "",
-    "major": "",
-    "suitable_partners": []
-  },
-  {
     "character_id": "4-21",
     "level": 4,
     "name": "庫贊 青雉",
-    "kr_name": "",
+    "kr_name": "쿠잔 해군대장 아오키지",
     "en_name": "",
     "materials": [
       {
@@ -1637,7 +1612,7 @@
     "character_id": "4-22",
     "level": 4,
     "name": "班·貝克曼",
-    "kr_name": "",
+    "kr_name": "벤 베크만 붉은머리 해적단 부선장",
     "en_name": "",
     "materials": [
       {
@@ -1658,7 +1633,7 @@
   {
     "character_id": "4-23",
     "level": 4,
-    "name": "班德·戴肯",
+    "name": "班塔·戴肯九世",
     "kr_name": "반 더 데켄 플라잉더치맨호의 선장",
     "en_name": "",
     "materials": [
@@ -1681,8 +1656,8 @@
     "character_id": "4-24",
     "level": 4,
     "name": "索隆 賞金獵人",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "조로 '현상금 사냥꾼' 초신성",
+    "en_name": "Zoro",
     "materials": [
       {
         "material_id": "3-20"
@@ -1710,7 +1685,7 @@
         "material_id": "3-22"
       },
       {
-        "material_id": "0-2"
+        "material_id": "3-15"
       },
       {
         "material_id": "3-24"
@@ -1724,8 +1699,8 @@
   {
     "character_id": "4-26",
     "level": 4,
-    "name": "馬歇爾·D·汀奇",
-    "kr_name": "",
+    "name": "馬歇爾·D·汀奇 叛徒",
+    "kr_name": "마샬 · D · 티치 흰수염해적단의 배신자",
     "en_name": "",
     "materials": [
       {
@@ -1747,7 +1722,7 @@
     "character_id": "4-27",
     "level": 4,
     "name": "培羅娜 幽靈公主",
-    "kr_name": "",
+    "kr_name": "페로나 홀로홀로열매 - 네거티브",
     "en_name": "",
     "materials": [
       {
@@ -1757,10 +1732,10 @@
         "material_id": "2-9"
       },
       {
-        "material_id": "1-3"
+        "material_id": "3-25"
       },
       {
-        "material_id": "3-25"
+        "material_id": "3-16"
       }
     ],
     "key_code": "",
@@ -1771,8 +1746,8 @@
   {
     "character_id": "4-28",
     "level": 4,
-    "name": "麥哲倫",
-    "kr_name": "마젤란",
+    "name": "麥哲倫 毒毒果實",
+    "kr_name": "마젤란 독독열매능력자",
     "en_name": "",
     "materials": [
       {
@@ -1815,8 +1790,8 @@
   {
     "character_id": "4-30",
     "level": 4,
-    "name": "鷹眼 喬拉可爾·密佛格",
-    "kr_name": "",
+    "name": "鷹眼 喬拉可爾·密佛格 七武海",
+    "kr_name": "쥬라클 미호크 칠무해",
     "en_name": "",
     "materials": [
       {
@@ -1838,7 +1813,7 @@
     "character_id": "4-31",
     "level": 4,
     "name": "劍豪·龍馬",
-    "kr_name": "",
+    "kr_name": "검호 류마 용의 목을 벤 사나이",
     "en_name": "",
     "materials": [
       {
@@ -1865,8 +1840,8 @@
   {
     "character_id": "4-32",
     "level": 4,
-    "name": "魯夫 三檔 超新星",
-    "kr_name": "",
+    "name": "魯夫 三檔",
+    "kr_name": "몽키 · D · 루피 기어서드 초신성",
     "en_name": "",
     "materials": [
       {
@@ -1888,7 +1863,7 @@
     "character_id": "4-33",
     "level": 4,
     "name": "戰桃丸",
-    "kr_name": "",
+    "kr_name": "센토마루 해군 과학본부장",
     "en_name": "",
     "materials": [
       {
@@ -1910,7 +1885,7 @@
     "character_id": "4-34",
     "level": 4,
     "name": "錦衛門",
-    "kr_name": "",
+    "kr_name": "킨에몬 와노쿠니의 사무라이",
     "en_name": "",
     "materials": [
       {
@@ -1931,18 +1906,18 @@
   {
     "character_id": "4-35",
     "level": 4,
-    "name": "薇薇",
-    "kr_name": "",
-    "en_name": "",
+    "name": "薇薇 Miss.星期三",
+    "kr_name": "비비 Miss.웬즈데이",
+    "en_name": "Vivi",
     "materials": [
       {
-        "material_id": "0-2"
+        "material_id": "3-15"
       },
       {
         "material_id": "3-10"
       },
       {
-        "material_id": "8-4"
+        "material_id": "3-17"
       }
     ],
     "key_code": "",
@@ -1954,7 +1929,7 @@
     "character_id": "4-36",
     "level": 4,
     "name": "薩卡斯基 赤犬",
-    "kr_name": "",
+    "kr_name": "사카즈키 해군대장 아카이누",
     "en_name": "",
     "materials": [
       {
@@ -1976,8 +1951,8 @@
     "character_id": "4-37",
     "level": 4,
     "name": "薩波",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "사보 혁명군",
+    "en_name": "Sabo",
     "materials": [
       {
         "material_id": "3-21"
@@ -1998,17 +1973,17 @@
     "character_id": "4-38",
     "level": 4,
     "name": "瓦夷帕 空島",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "와이퍼 하늘섬의 전귀",
+    "en_name": "Wiper",
     "materials": [
       {
         "material_id": "3-19"
       },
       {
-        "material_id": "1-3"
+        "material_id": "3-32"
       },
       {
-        "material_id": "3-32"
+        "material_id": "3-16"
       }
     ],
     "key_code": "",
@@ -2020,7 +1995,7 @@
     "character_id": "4-39",
     "level": 4,
     "name": "騙人布 波音列島",
-    "kr_name": "",
+    "kr_name": "우솝 보잉열도 생존자",
     "en_name": "",
     "materials": [
       {
@@ -2030,7 +2005,7 @@
         "material_id": "3-6"
       },
       {
-        "material_id": "8-4"
+        "material_id": "3-17"
       }
     ],
     "key_code": "",
@@ -2042,7 +2017,7 @@
     "character_id": "4-40",
     "level": 4,
     "name": "鼯鼠中將",
-    "kr_name": "",
+    "kr_name": "모몬가 G1 지부의 수장",
     "en_name": "",
     "materials": [
       {
@@ -2064,7 +2039,7 @@
     "character_id": "4-41",
     "level": 4,
     "name": "魔人歐斯",
-    "kr_name": "",
+    "kr_name": "마인 오즈 대륙파괴인",
     "en_name": "",
     "materials": [
       {
@@ -2086,7 +2061,7 @@
     "character_id": "4-42",
     "level": 4,
     "name": "鑽石喬茲",
-    "kr_name": "",
+    "kr_name": "죠즈 흰수염 3번대 대장 다이아몬드",
     "en_name": "",
     "materials": [
       {
@@ -2108,7 +2083,7 @@
     "character_id": "4-43",
     "level": 4,
     "name": "Baby5",
-    "kr_name": "",
+    "kr_name": "베이비 5 팔보수군",
     "en_name": "",
     "materials": [
       {
@@ -2130,17 +2105,17 @@
     "character_id": "4-44",
     "level": 4,
     "name": "CP9 卡古",
-    "kr_name": "",
+    "kr_name": "카쿠 CP9 소소열매 람각 주단",
     "en_name": "",
     "materials": [
       {
         "material_id": "3-31"
       },
       {
-        "material_id": "0-2"
+        "material_id": "3-12"
       },
       {
-        "material_id": "3-12"
+        "material_id": "3-15"
       }
     ],
     "key_code": "",
@@ -2153,7 +2128,7 @@
     "level": 4,
     "name": "X-德雷克異特龍",
     "kr_name": "X-드레이크 알로사우로스",
-    "en_name": "",
+    "en_name": "X DRAKE",
     "materials": [
       {
         "material_id": "3-33"
@@ -2174,19 +2149,19 @@
     "character_id": "4-46",
     "level": 4,
     "name": "雷利",
-    "kr_name": "",
+    "kr_name": "[히든] 실버즈 레일리 세계의 진실을 아는 자",
     "en_name": "",
     "materials": [],
     "key_code": "",
-    "remark": "",
+    "remark": "航海日誌取得或抽取",
     "major": "",
     "suitable_partners": []
   },
   {
     "character_id": "5-1",
     "level": 5,
-    "name": "光月時 時夫人",
-    "kr_name": "",
+    "name": "光月時",
+    "kr_name": "아마츠키 토키 시간 여행자",
     "en_name": "",
     "materials": [
       {
@@ -2197,21 +2172,6 @@
       },
       {
         "material_id": "4-7"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2244,8 +2204,8 @@
   {
     "character_id": "5-3",
     "level": 5,
-    "name": "巴索羅繆·大熊 傳說",
-    "kr_name": "",
+    "name": "巴索羅繆·大熊 暴君",
+    "kr_name": "바솔로뮤 쿠마 폭군",
     "en_name": "",
     "materials": [
       {
@@ -2256,15 +2216,6 @@
       },
       {
         "material_id": "4-29"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2276,8 +2227,8 @@
     "character_id": "5-4",
     "level": 5,
     "name": "文斯莫克·蕾玖",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "빈스모크 레이쥬 포이즌 핑크",
+    "en_name": "Reju",
     "materials": [
       {
         "material_id": "4-28"
@@ -2287,15 +2238,6 @@
       },
       {
         "material_id": "4-11"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2307,30 +2249,21 @@
     "character_id": "5-5",
     "level": 5,
     "name": "月光·摩利亞 恐怖三桅帆船",
-    "kr_name": "",
+    "kr_name": "겟코 모리아 스릴러바크의 선장",
     "en_name": "",
     "materials": [
       {
         "material_id": "4-41"
       },
       {
-        "material_id": "12-8"
+        "material_id": "4-31"
       },
       {
         "material_id": "4-27"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -2338,17 +2271,17 @@
     "character_id": "5-6",
     "level": 5,
     "name": "卡爾加拉 香狄亞的大戰士",
-    "kr_name": "카르가라",
+    "kr_name": "카르가라 샨디아의 대전사",
     "en_name": "",
     "materials": [
       {
         "material_id": "4-39"
       },
       {
-        "material_id": "3-26"
+        "material_id": "4-8"
       },
       {
-        "material_id": "1-5"
+        "material_id": "4-38"
       }
     ],
     "key_code": "",
@@ -2359,7 +2292,7 @@
   {
     "character_id": "5-7",
     "level": 5,
-    "name": "吉貝爾 傳說",
+    "name": "吉貝爾 甚平 魚人領袖",
     "kr_name": "징베 전 칠무해 어인족 수장",
     "en_name": "",
     "materials": [
@@ -2370,7 +2303,7 @@
         "material_id": "4-10"
       },
       {
-        "material_id": "3-29"
+        "material_id": "4-36"
       }
     ],
     "key_code": "",
@@ -2381,8 +2314,8 @@
   {
     "character_id": "5-8",
     "level": 5,
-    "name": "托拉法爾加·羅 傳說",
-    "kr_name": "",
+    "name": "托拉法爾加·羅 紅心海賊團",
+    "kr_name": "트라팔가 로우 하트 해적단 선장",
     "en_name": "",
     "materials": [
       {
@@ -2393,15 +2326,6 @@
       },
       {
         "material_id": "4-33"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2413,26 +2337,17 @@
     "character_id": "5-9",
     "level": 5,
     "name": "艾斯 海賊王之子",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "골.D.에이스 해적왕의 아들",
+    "en_name": "Ace",
     "materials": [
       {
-        "material_id": "3-22"
+        "material_id": "4-25"
       },
       {
         "material_id": "4-40"
       },
       {
         "material_id": "4-26"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2444,7 +2359,7 @@
     "character_id": "5-10",
     "level": 5,
     "name": "西爾爾克的墓碑",
-    "kr_name": "",
+    "kr_name": "히루루크의 묘비",
     "en_name": "",
     "materials": [
       {
@@ -2460,7 +2375,7 @@
     "character_id": "5-11",
     "level": 5,
     "name": "克比",
-    "kr_name": "",
+    "kr_name": "코비 세계의 운명을 바꾼소년",
     "en_name": "",
     "materials": [
       {
@@ -2471,15 +2386,6 @@
       },
       {
         "material_id": "4-18"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2491,26 +2397,17 @@
     "character_id": "5-12",
     "level": 5,
     "name": "忍",
-    "kr_name": "",
+    "kr_name": "시노부 쿠노이치",
     "en_name": "",
     "materials": [
       {
-        "material_id": "12-8"
+        "material_id": "4-31"
       },
       {
         "material_id": "4-26"
       },
       {
         "material_id": "4-34"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2521,8 +2418,8 @@
   {
     "character_id": "5-13",
     "level": 5,
-    "name": "波雅·漢考克 九蛇海賊團團長",
-    "kr_name": "",
+    "name": "波雅·漢考克 九蛇海賊團",
+    "kr_name": "보아 핸콕 구사 해적단 선장",
     "en_name": "",
     "materials": [
       {
@@ -2533,15 +2430,6 @@
       },
       {
         "material_id": "4-30"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2552,15 +2440,15 @@
   {
     "character_id": "5-14",
     "level": 5,
-    "name": "金獅子獅鬼",
-    "kr_name": "시키",
+    "name": "金獅子",
+    "kr_name": "시키 금사자",
     "en_name": "",
     "materials": [
       {
         "material_id": "4-38"
       },
       {
-        "material_id": "0-6"
+        "material_id": "4-44"
       },
       {
         "material_id": "4-28"
@@ -2575,26 +2463,17 @@
     "character_id": "5-15",
     "level": 5,
     "name": "燼 (KING)",
-    "kr_name": "",
+    "kr_name": "킹 백수해적단 - 대간판",
     "en_name": "",
     "materials": [
       {
-        "material_id": "0-1"
+        "material_id": "4-45"
       },
       {
         "material_id": "4-4"
       },
       {
         "material_id": "4-19"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2606,7 +2485,7 @@
     "character_id": "5-16",
     "level": 5,
     "name": "香吉士 西裝",
-    "kr_name": "",
+    "kr_name": "상디 검은다리 '슈트 코스'",
     "en_name": "",
     "materials": [
       {
@@ -2617,15 +2496,6 @@
       },
       {
         "material_id": "4-4"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2637,7 +2507,7 @@
     "character_id": "5-17",
     "level": 5,
     "name": "夏洛特·布蕾",
-    "kr_name": "",
+    "kr_name": "샬롯 브륄레 미러월드",
     "en_name": "",
     "materials": [
       {
@@ -2647,19 +2517,10 @@
         "material_id": "4-35"
       },
       {
-        "material_id": "11-3"
+        "material_id": "4-46"
       },
       {
         "material_id": "3-14"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2671,7 +2532,7 @@
     "character_id": "5-18",
     "level": 5,
     "name": "夏洛特·克力架",
-    "kr_name": "",
+    "kr_name": "샬롯 크래커 빅맘 4장성",
     "en_name": "",
     "materials": [
       {
@@ -2682,15 +2543,6 @@
       },
       {
         "material_id": "4-15"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2702,8 +2554,8 @@
     "character_id": "5-19",
     "level": 5,
     "name": "娜美 小偷貓",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "나미 도둑 고양이",
+    "en_name": "Nami",
     "materials": [
       {
         "material_id": "4-35"
@@ -2716,49 +2568,28 @@
       },
       {
         "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
   {
     "character_id": "5-20",
     "level": 5,
-    "name": "席爾巴斯·雷利 傳說",
-    "kr_name": "",
+    "name": "席爾巴斯·雷利 副船長",
+    "kr_name": "실버즈 레일리 로져해적단 부선장",
     "en_name": "",
     "materials": [
       {
-        "material_id": "11-3"
+        "material_id": "4-46"
       },
       {
         "material_id": "4-33"
       },
       {
         "material_id": "3-8"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2770,26 +2601,17 @@
     "character_id": "5-21",
     "level": 5,
     "name": "烏爾堤 飛六胞",
-    "kr_name": "울티",
+    "kr_name": "울티 토비롯포",
     "en_name": "",
     "materials": [
       {
         "material_id": "4-29"
       },
       {
-        "material_id": "0-7"
+        "material_id": "4-22"
       },
       {
         "material_id": "4-33"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2801,7 +2623,7 @@
     "character_id": "5-22",
     "level": 5,
     "name": "索隆 獅子歌歌",
-    "kr_name": "",
+    "kr_name": "롤로노아 조로 죽음의경지 '사자의노래'",
     "en_name": "",
     "materials": [
       {
@@ -2812,15 +2634,6 @@
       },
       {
         "material_id": "4-30"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2832,11 +2645,11 @@
     "character_id": "5-23",
     "level": 5,
     "name": "馬可 鳳凰",
-    "kr_name": "馬可",
+    "kr_name": "마르코 조온계 환수종 '불사조'",
     "en_name": "",
     "materials": [
       {
-        "material_id": "3-22"
+        "material_id": "4-25"
       },
       {
         "material_id": "4-13"
@@ -2846,15 +2659,15 @@
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
   {
     "character_id": "5-24",
     "level": 5,
-    "name": "馬歇爾·D·汀奇 黑鬍子海賊團團長",
-    "kr_name": "",
+    "name": "馬歇爾·D·汀奇 黑鬍子海賊團",
+    "kr_name": "마샬 · D · 티치 검은수염 해적단 선장 \"검은수염\"",
     "en_name": "",
     "materials": [
       {
@@ -2865,19 +2678,10 @@
       },
       {
         "material_id": "4-3"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -2885,7 +2689,7 @@
     "character_id": "5-25",
     "level": 5,
     "name": "捷風 (Z) 澤法",
-    "kr_name": "제파",
+    "kr_name": "제파 전 해군 대장 '흑완'",
     "en_name": "",
     "materials": [
       {
@@ -2907,7 +2711,7 @@
     "character_id": "5-26",
     "level": 5,
     "name": "凱薩·庫朗",
-    "kr_name": "",
+    "kr_name": "시저 크라운 미치광이 과학자 M",
     "en_name": "",
     "materials": [
       {
@@ -2918,15 +2722,6 @@
       },
       {
         "material_id": "4-6"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2938,7 +2733,7 @@
     "character_id": "5-27",
     "level": 5,
     "name": "喬巴 柔力強化",
-    "kr_name": "",
+    "kr_name": "쵸파 럼블볼:유력강화",
     "en_name": "",
     "materials": [
       {
@@ -2949,15 +2744,6 @@
       },
       {
         "material_id": "4-3"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -2968,8 +2754,8 @@
   {
     "character_id": "5-28",
     "level": 5,
-    "name": "斯摩格 傳說",
-    "kr_name": "",
+    "name": "斯摩格 執念的中將",
+    "kr_name": "스모커 집념의 해군 중장",
     "en_name": "",
     "materials": [
       {
@@ -2980,15 +2766,6 @@
       },
       {
         "material_id": "4-40"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -3000,7 +2777,7 @@
     "character_id": "5-29",
     "level": 5,
     "name": "雲雀",
-    "kr_name": "",
+    "kr_name": "히바리 해군본부 기밀특수부대",
     "en_name": "",
     "materials": [
       {
@@ -3011,15 +2788,6 @@
       },
       {
         "material_id": "4-8"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -3030,8 +2798,8 @@
   {
     "character_id": "5-30",
     "level": 5,
-    "name": "黑色瑪麗亞",
-    "kr_name": "",
+    "name": "黑瑪麗亞",
+    "kr_name": "블랙마리아 최강의 6인 '토비롯포'",
     "en_name": "",
     "materials": [
       {
@@ -3041,16 +2809,7 @@
         "material_id": "4-44"
       },
       {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
+        "material_id": "4-45"
       }
     ],
     "key_code": "",
@@ -3062,26 +2821,17 @@
     "character_id": "5-31",
     "level": 5,
     "name": "愛德華·紐蓋特 白鬍子",
-    "kr_name": "",
+    "kr_name": "에드워드 뉴게이트 '사황' 흰수염 해적단의 아버지",
     "en_name": "",
     "materials": [
       {
         "material_id": "4-42"
       },
       {
-        "material_id": "5-23"
+        "material_id": "4-25"
       },
       {
         "material_id": "4-34"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -3093,8 +2843,8 @@
     "character_id": "5-32",
     "level": 5,
     "name": "蒙其·D·多拉格",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "몽키.D.드래곤 세계최악의 범죄자",
+    "en_name": "Dragon",
     "materials": [
       {
         "material_id": "6-6"
@@ -3104,19 +2854,10 @@
       },
       {
         "material_id": "4-35"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -3124,33 +2865,24 @@
     "character_id": "5-33",
     "level": 5,
     "name": "魯夫 夢魘",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "몽키 · D · 루피 나이트메어",
+    "en_name": "Luffy",
     "materials": [
       {
         "material_id": "4-41"
       },
       {
-        "material_id": "12-8"
+        "material_id": "4-31"
       },
       {
         "material_id": "3-14"
       },
       {
         "material_id": "4-32"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*5",
     "major": "",
     "suitable_partners": []
   },
@@ -3158,7 +2890,7 @@
     "character_id": "5-34",
     "level": 5,
     "name": "戰國",
-    "kr_name": "센고쿠",
+    "kr_name": "센고쿠 전 해군 원수",
     "en_name": "",
     "materials": [
       {
@@ -3180,7 +2912,7 @@
     "character_id": "5-35",
     "level": 5,
     "name": "貓腹蛇",
-    "kr_name": "",
+    "kr_name": "네코마무시 밤의 왕",
     "en_name": "",
     "materials": [
       {
@@ -3190,20 +2922,11 @@
         "material_id": "4-38"
       },
       {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
+        "material_id": "4-45"
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -3211,7 +2934,7 @@
     "character_id": "5-36",
     "level": 5,
     "name": "羅布·路基 豹人",
-    "kr_name": "羅布·路基",
+    "kr_name": "로브 루치 생명귀환 지회무신",
     "en_name": "",
     "materials": [
       {
@@ -3221,11 +2944,11 @@
         "material_id": "4-6"
       },
       {
-        "material_id": "3-9"
+        "material_id": "4-10"
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -3233,7 +2956,7 @@
     "character_id": "5-37",
     "level": 5,
     "name": "藤虎一笑",
-    "kr_name": "",
+    "kr_name": "후지토라 잇쇼우 '신' 해군대장",
     "en_name": "",
     "materials": [
       {
@@ -3244,15 +2967,6 @@
       },
       {
         "material_id": "4-11"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -3264,21 +2978,21 @@
     "character_id": "5-38",
     "level": 5,
     "name": "鯨魚拉布",
-    "kr_name": "",
+    "kr_name": "라분 레드라인을 넘으려는 향유고래",
     "en_name": "",
     "materials": [
       {
         "material_id": "4-8"
       },
       {
-        "material_id": "4-12"
+        "material_id": "4-5"
       },
       {
-        "material_id": "4-5"
+        "material_id": "4-12"
       }
     ],
     "key_code": "",
-    "remark": "",
+    "remark": "木*3",
     "major": "",
     "suitable_partners": []
   },
@@ -3307,7 +3021,7 @@
   {
     "character_id": "5-40",
     "level": 5,
-    "name": "砂糖",
+    "name": "砂糖 玩具支配者",
     "kr_name": "슈가 장난감의 지배자",
     "en_name": "Sugar",
     "materials": [
@@ -3319,17 +3033,20 @@
       },
       {
         "material_id": "4-4"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
+    "key_code": "",
+    "remark": "",
+    "major": "",
+    "suitable_partners": []
+  },
+  {
+    "character_id": "5-41",
+    "level": 5,
+    "name": "殭屍將軍",
+    "kr_name": "장군좀비",
+    "en_name": "",
+    "materials": [],
     "key_code": "",
     "remark": "",
     "major": "",
@@ -3340,16 +3057,16 @@
     "level": 6,
     "name": "千陽號",
     "kr_name": "사우전드 써니호 밀짚모자 해적단",
-    "en_name": "",
+    "en_name": "Sunny",
     "materials": [
       {
         "material_id": "4-1"
       },
       {
-        "material_id": "6-10"
+        "material_id": "4-44"
       },
       {
-        "material_id": "4-44"
+        "material_id": "6-10"
       }
     ],
     "key_code": "sunny",
@@ -3383,23 +3100,23 @@
     "character_id": "6-3",
     "level": 6,
     "name": "加洛特 兔子",
-    "kr_name": "캐럿",
-    "en_name": "",
+    "kr_name": "캐럿 밍크족 토끼",
+    "en_name": "carrot",
     "materials": [
       {
-        "material_id": "8-5"
+        "material_id": "4-29"
       },
       {
-        "material_id": "9-2"
-      },
-      {
-        "material_id": "3-14"
+        "material_id": "3-19"
       },
       {
         "material_id": "3-14"
       },
       {
-        "material_id": "11-3"
+        "material_id": "3-14"
+      },
+      {
+        "material_id": "4-46"
       }
     ],
     "key_code": "carrot",
@@ -3410,18 +3127,18 @@
   {
     "character_id": "6-4",
     "level": 6,
-    "name": "絲媞希 斯圖西",
+    "name": "絲媞希 斯圖西 CP0",
     "kr_name": "스튜시 Cp.0.환락가의 여왕",
-    "en_name": "",
+    "en_name": "Stussy",
     "materials": [
+      {
+        "material_id": "4-44"
+      },
       {
         "material_id": "4-33"
       },
       {
         "material_id": "4-15"
-      },
-      {
-        "material_id": "4-44"
       }
     ],
     "key_code": "stussy",
@@ -3462,7 +3179,7 @@
     "en_name": "",
     "materials": [
       {
-        "material_id": "6-6"
+        "material_id": "4-9"
       },
       {
         "material_id": "4-11"
@@ -3501,7 +3218,7 @@
   {
     "character_id": "6-8",
     "level": 6,
-    "name": "雨之希留",
+    "name": "雨之希留 黑鬍子海賊團",
     "kr_name": "비의 시류 검은 수염 해적단 부선장",
     "en_name": "",
     "materials": [
@@ -3523,18 +3240,18 @@
   {
     "character_id": "6-9",
     "level": 6,
-    "name": "紅髮船 雷德佛斯號",
-    "kr_name": "",
+    "name": "雷德佛斯號 香克斯船",
+    "kr_name": "레드포스 호 사황 샹크스의 붉은용",
     "en_name": "",
     "materials": [
       {
         "material_id": "4-16"
       },
       {
-        "material_id": "6-10"
+        "material_id": "3-3"
       },
       {
-        "material_id": "3-3"
+        "material_id": "6-10"
       }
     ],
     "key_code": "redforce",
@@ -3557,8 +3274,8 @@
   {
     "character_id": "6-11",
     "level": 6,
-    "name": "班德·戴肯 隱藏",
-    "kr_name": "",
+    "name": "班塔·戴肯九世 方舟投擲者",
+    "kr_name": "반 더 데켄 어인섬 절반면적의 노아를 던진자",
     "en_name": "",
     "materials": [
       {
@@ -3583,7 +3300,7 @@
     "character_id": "6-12",
     "level": 6,
     "name": "神·艾涅爾 方舟麥克辛",
-    "kr_name": "",
+    "kr_name": "갓 에넬 방주 맥심",
     "en_name": "",
     "materials": [
       {
@@ -3607,8 +3324,8 @@
   {
     "character_id": "6-13",
     "level": 6,
-    "name": "費雪·泰格",
-    "kr_name": "피셔타이거",
+    "name": "費雪·泰格 奴隸解放者",
+    "kr_name": "피셔 타이거 마리조아 노예시장 파괴자",
     "en_name": "",
     "materials": [
       {
@@ -3632,8 +3349,8 @@
   {
     "character_id": "6-14",
     "level": 6,
-    "name": "馮克雷 Mr.2 隱藏",
-    "kr_name": "",
+    "name": "馮克雷 Mr.2 推進城",
+    "kr_name": "벤담 2년 후 임펠다운 5.5층 뉴카마랜드 왕",
     "en_name": "",
     "materials": [
       {
@@ -3659,13 +3376,13 @@
     "level": 6,
     "name": "綠牛",
     "kr_name": "료쿠규 '신' 해군대장",
-    "en_name": "",
+    "en_name": "Ryokugyu",
     "materials": [
       {
-        "material_id": "12-8"
+        "material_id": "4-31"
       },
       {
-        "material_id": "6-6"
+        "material_id": "4-9"
       },
       {
         "material_id": "4-5"
@@ -3682,8 +3399,8 @@
   {
     "character_id": "6-16",
     "level": 6,
-    "name": "維爾戈",
-    "kr_name": "",
+    "name": "維爾戈 鬼竹",
+    "kr_name": "귀죽의 베르고 해군 중장",
     "en_name": "",
     "materials": [
       {
@@ -3707,8 +3424,8 @@
   {
     "character_id": "6-17",
     "level": 6,
-    "name": "劍豪  鷹眼 密佛格",
-    "kr_name": "검호 미호크",
+    "name": "喬拉可爾·密佛格  鷹眼 隱藏",
+    "kr_name": "쥬라클 미호크 매의 눈",
     "en_name": "",
     "materials": [
       {
@@ -3731,7 +3448,7 @@
     "level": 6,
     "name": "蕾貝卡",
     "kr_name": "레베카 콜로세움의 검투사",
-    "en_name": "",
+    "en_name": "Rebecca",
     "materials": [
       {
         "material_id": "4-3"
@@ -3740,7 +3457,7 @@
         "material_id": "4-15"
       }
     ],
-    "key_code": "Rebecca",
+    "key_code": "rebecca",
     "remark": "",
     "major": "",
     "suitable_partners": []
@@ -3748,7 +3465,7 @@
   {
     "character_id": "6-19",
     "level": 6,
-    "name": "薩波 隱藏",
+    "name": "薩波 龍爪拳",
     "kr_name": "사보 용조권",
     "en_name": "",
     "materials": [
@@ -3770,8 +3487,8 @@
   {
     "character_id": "6-20",
     "level": 6,
-    "name": "霜月龍馬 秋水",
-    "kr_name": "",
+    "name": "龍馬 秋水持有者",
+    "kr_name": "검호 류마 흑도 슈스이의 주인",
     "en_name": "",
     "materials": [
       {
@@ -3792,7 +3509,7 @@
   {
     "character_id": "6-21",
     "level": 6,
-    "name": "薩卡斯基 赤犬 隱藏",
+    "name": "薩卡斯基 赤犬 冥狗",
     "kr_name": "아카이누 흰수염을 죽인 붉은개",
     "en_name": "",
     "materials": [
@@ -3839,7 +3556,7 @@
   {
     "character_id": "6-23",
     "level": 6,
-    "name": "基拉 隱藏",
+    "name": "基拉 殺戮武士",
     "kr_name": "킬러 초신성 - 살육무사",
     "en_name": "",
     "materials": [
@@ -3865,7 +3582,7 @@
     "character_id": "7-1",
     "level": 7,
     "name": "可亞拉 克爾拉 革命軍",
-    "kr_name": "코알라",
+    "kr_name": "코알라 혁명군 - 어인공수도대리사범",
     "en_name": "Koala",
     "materials": [
       {
@@ -3876,9 +3593,6 @@
       },
       {
         "material_id": "2-4"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "koala",
@@ -3890,7 +3604,7 @@
     "character_id": "7-2",
     "level": 7,
     "name": "奎因 三災",
-    "kr_name": "퀸",
+    "kr_name": "퀸 삼재해:역재",
     "en_name": "Queen",
     "materials": [
       {
@@ -3901,9 +3615,6 @@
       },
       {
         "material_id": "2-3"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "queen",
@@ -3914,21 +3625,18 @@
   {
     "character_id": "7-3",
     "level": 7,
-    "name": "黑瑪利亞 誘惑",
+    "name": "黑瑪利亞 蜘蛛果實",
     "kr_name": "블랙마리아",
     "en_name": "Black Maria",
     "materials": [
       {
-        "material_id": "7-3"
+        "material_id": "5-30"
       },
       {
         "material_id": "4-8"
       },
       {
         "material_id": "3-12"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "blackmaria",
@@ -3954,9 +3662,6 @@
       },
       {
         "material_id": "2-1"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "burgess",
@@ -3968,7 +3673,7 @@
     "character_id": "7-5",
     "level": 7,
     "name": "艾斯 炎帝",
-    "kr_name": "",
+    "kr_name": "에이스",
     "en_name": "Ace",
     "materials": [
       {
@@ -3979,9 +3684,6 @@
       },
       {
         "material_id": "3-7"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "ace",
@@ -3992,8 +3694,8 @@
   {
     "character_id": "7-6",
     "level": 7,
-    "name": "培羅娜",
-    "kr_name": "",
+    "name": "培羅娜 幽靈公主",
+    "kr_name": "페로나 고스트 프린세스",
     "en_name": "Perona",
     "materials": [
       {
@@ -4010,9 +3712,6 @@
       },
       {
         "material_id": "2-9"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "perona",
@@ -4119,7 +3818,7 @@
     "character_id": "9-1",
     "level": 9,
     "name": "夏洛特 卡塔庫栗",
-    "kr_name": "샬롯 카타쿠리",
+    "kr_name": "샬롯 카타쿠리 장성 밀가루 대신",
     "en_name": "",
     "materials": [
       {
@@ -4144,7 +3843,7 @@
     "character_id": "9-2",
     "level": 9,
     "name": "艾涅爾 GOD",
-    "kr_name": "에넬",
+    "kr_name": "에넬 G.O.D",
     "en_name": "",
     "materials": [
       {
@@ -4154,13 +3853,10 @@
         "material_id": "5-26"
       },
       {
-        "material_id": "4-20"
+        "material_id": "3-17"
       },
       {
         "material_id": "6-10"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -4172,7 +3868,7 @@
     "character_id": "9-3",
     "level": 9,
     "name": "亞爾麗塔",
-    "kr_name": "알비다",
+    "kr_name": "알비다 쇠몽둥이",
     "en_name": "",
     "materials": [
       {
@@ -4183,9 +3879,6 @@
       },
       {
         "material_id": "4-30"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -4196,8 +3889,8 @@
   {
     "character_id": "9-4",
     "level": 9,
-    "name": "阿忍",
-    "kr_name": "忍",
+    "name": "阿忍 女忍者",
+    "kr_name": "시노부 뇌쇄 쿠노이치",
     "en_name": "",
     "materials": [
       {
@@ -4207,10 +3900,7 @@
         "material_id": "5-13"
       },
       {
-        "material_id": "4-7"
-      },
-      {
-        "material_id": "0-1"
+        "material_id": "6-10"
       }
     ],
     "key_code": "",
@@ -4222,7 +3912,7 @@
     "character_id": "9-5",
     "level": 9,
     "name": "艾茵 (Z)",
-    "kr_name": "아인",
+    "kr_name": "아인 네오 해군 장교",
     "en_name": "",
     "materials": [
       {
@@ -4253,7 +3943,7 @@
     "character_id": "9-6",
     "level": 9,
     "name": "燼 (KING) 三災",
-    "kr_name": "킹",
+    "kr_name": "킹 삼재해:화재",
     "en_name": "",
     "materials": [
       {
@@ -4264,9 +3954,6 @@
       },
       {
         "material_id": "4-7"
-      },
-      {
-        "material_id": "0-1"
       }
     ],
     "key_code": "",
@@ -4278,20 +3965,17 @@
     "character_id": "9-7",
     "level": 9,
     "name": "雷德費爾德 吸血鬼伯爵",
-    "kr_name": "레드필드",
+    "kr_name": "패트릭 레드필드 붉은백작",
     "en_name": "",
     "materials": [
       {
         "material_id": "5-27"
       },
       {
-        "material_id": "5-24"
+        "material_id": "5-2"
       },
       {
-        "material_id": "4-7"
-      },
-      {
-        "material_id": "0-1"
+        "material_id": "6-14"
       }
     ],
     "key_code": "",
@@ -4313,10 +3997,7 @@
         "material_id": "5-40"
       },
       {
-        "material_id": "4-19"
-      },
-      {
-        "material_id": "0-1"
+        "material_id": "8-1"
       }
     ],
     "key_code": "",
@@ -4349,7 +4030,7 @@
   {
     "character_id": "9-10",
     "level": 9,
-    "name": "馬可",
+    "name": "馬可 白鬍子遺產的守護者",
     "kr_name": "마르코 흰수염 유산의 수호자",
     "en_name": "",
     "materials": [
@@ -4367,7 +4048,7 @@
       }
     ],
     "key_code": "",
-    "remark": "鳳凰羽毛 + 5000金 + 木*5",
+    "remark": "5000金 + 木*5",
     "major": "",
     "suitable_partners": []
   },
@@ -4486,21 +4167,21 @@
   {
     "character_id": "10-7",
     "level": 10,
-    "name": "珠寶·波妮",
+    "name": "珠寶·波妮 大胃王",
     "kr_name": "주얼리 보니",
-    "en_name": "",
+    "en_name": "Bonney",
     "materials": [
       {
         "material_id": "6-4"
       },
       {
-        "material_id": "3-4"
-      },
-      {
-        "material_id": "3-6"
+        "material_id": "5-3"
       },
       {
         "material_id": "3-20"
+      },
+      {
+        "material_id": "3-6"
       },
       {
         "material_id": "10-1"
@@ -4514,7 +4195,7 @@
   {
     "character_id": "10-8",
     "level": 10,
-    "name": "索隆 超越",
+    "name": "索隆 修羅的劍士",
     "kr_name": "롤로노아 조로 수라의 검사",
     "en_name": "",
     "materials": [
@@ -4535,7 +4216,7 @@
       }
     ],
     "key_code": "zoro tr",
-    "remark": "能力點 * 4 升一次 + 秋水再升一次",
+    "remark": "能力點 * 4 升一次 + 道具秋水再升一次",
     "major": "",
     "suitable_partners": []
   },
@@ -4543,7 +4224,7 @@
     "character_id": "10-10",
     "level": 10,
     "name": "尤斯塔斯·基德",
-    "kr_name": "키드",
+    "kr_name": "키드 유스타스'캡틴",
     "en_name": "Kid",
     "materials": [
       {
@@ -4553,10 +4234,10 @@
         "material_id": "6-23"
       },
       {
-        "material_id": "5-8"
+        "material_id": "4-10"
       },
       {
-        "material_id": "4-32"
+        "material_id": "3-30"
       },
       {
         "material_id": "3-1"
@@ -4574,7 +4255,7 @@
     "character_id": "10-11",
     "level": 10,
     "name": "魯夫 蛇人",
-    "kr_name": "스네이크맨",
+    "kr_name": "루피 - 기어포스 다섯번째 황제",
     "en_name": "",
     "materials": [
       {
@@ -4602,7 +4283,7 @@
     "character_id": "10-12",
     "level": 10,
     "name": "羅布·路基 CP0",
-    "kr_name": "루치",
+    "kr_name": "로브 루치 CP.Zero",
     "en_name": "",
     "materials": [
       {
@@ -4626,7 +4307,7 @@
   {
     "character_id": "10-13",
     "level": 10,
-    "name": "唐吉訶德 多弗朗明哥",
+    "name": "多弗朗明哥 德雷斯羅薩的惡夢",
     "kr_name": "도플라밍고 \"어둠의 조커\" 드레스로자의 악몽",
     "en_name": "",
     "materials": [
@@ -4657,8 +4338,8 @@
   {
     "character_id": "10-14",
     "level": 10,
-    "name": "藤虎",
-    "kr_name": "후지토라",
+    "name": "藤虎 憤怒之虎",
+    "kr_name": "후지토라 해군 대장 '성난 보라호랑이'",
     "en_name": "",
     "materials": [
       {
@@ -4668,13 +4349,13 @@
         "material_id": "6-2"
       },
       {
-        "material_id": "0-28"
+        "material_id": "4-40"
       },
       {
         "material_id": "2-11"
       }
     ],
-    "key_code": "",
+    "key_code": "fujitora tr",
     "remark": "",
     "major": "",
     "suitable_partners": []
@@ -4682,8 +4363,8 @@
   {
     "character_id": "10-15",
     "level": 10,
-    "name": "馬歇爾·D·汀奇 黑鬍子",
-    "kr_name": "",
+    "name": "馬歇爾·D·汀奇 黑鬍子 震震與黑暗",
+    "kr_name": "마샬 · D · 티치 지진과 어둠의 검은수염",
     "en_name": "",
     "materials": [
       {
@@ -4707,7 +4388,7 @@
   {
     "character_id": "10-16",
     "level": 10,
-    "name": "魯夫 冥王弟子",
+    "name": "魯夫 冥王的弟子",
     "kr_name": "몽키 · D · 루피 명왕 레일리의 제자",
     "en_name": "",
     "materials": [
@@ -4732,7 +4413,7 @@
   {
     "character_id": "10-17",
     "level": 10,
-    "name": "巴吉魯·霍金斯",
+    "name": "巴吉魯·霍金斯 命運的魔術師",
     "kr_name": "바질 호킨스 운명을 점치는 마술사",
     "en_name": "",
     "materials": [
@@ -4761,7 +4442,7 @@
     "character_id": "10-18",
     "level": 10,
     "name": "布魯克 靈魂之王",
-    "kr_name": "",
+    "kr_name": "브룩 소울 킹",
     "en_name": "",
     "materials": [
       {
@@ -4788,8 +4469,8 @@
   {
     "character_id": "10-19",
     "level": 10,
-    "name": "達絲琪",
-    "kr_name": "",
+    "name": "達絲琪 上校",
+    "kr_name": "대령 타시기",
     "en_name": "",
     "materials": [
       {
@@ -4817,7 +4498,7 @@
     "character_id": "10-20",
     "level": 10,
     "name": "薩波 革命軍參謀長",
-    "kr_name": "",
+    "kr_name": "사보 혁명군 참모총장",
     "en_name": "",
     "materials": [
       {
@@ -4844,9 +4525,9 @@
   {
     "character_id": "10-21",
     "level": 10,
-    "name": "香吉士",
-    "kr_name": "",
-    "en_name": "",
+    "name": "香吉士 人妖島的倖存者",
+    "kr_name": "상디 뉴카마섬의 생존자",
+    "en_name": "Sanji",
     "materials": [
       {
         "material_id": "5-16"
@@ -4869,8 +4550,8 @@
   {
     "character_id": "10-22",
     "level": 10,
-    "name": "紅髮 香克斯",
-    "kr_name": "",
+    "name": "紅髮 香克斯 頂上戰爭",
+    "kr_name": "샹크스 마린포드 정상해전 종결자",
     "en_name": "",
     "materials": [
       {
@@ -4898,7 +4579,7 @@
     "character_id": "10-23",
     "level": 10,
     "name": "白星公主",
-    "kr_name": "",
+    "kr_name": "시라호시 '포세이돈' 인어공주",
     "en_name": "",
     "materials": [
       {
@@ -4922,8 +4603,8 @@
   {
     "character_id": "10-24",
     "level": 10,
-    "name": "綠牛",
-    "kr_name": "",
+    "name": "荒牧 綠牛 新大將",
+    "kr_name": "아라마키 '신' 해군대장 - 초록소",
     "en_name": "",
     "materials": [
       {
@@ -4947,8 +4628,8 @@
   {
     "character_id": "10-25",
     "level": 10,
-    "name": "赤犬 薩卡斯基",
-    "kr_name": "",
+    "name": "赤犬 薩卡斯基 新元帥",
+    "kr_name": "아카이누 신 해군원수",
     "en_name": "",
     "materials": [
       {
@@ -4972,9 +4653,9 @@
   {
     "character_id": "10-26",
     "level": 10,
-    "name": "大和",
-    "kr_name": "",
-    "en_name": "",
+    "name": "大和 鬼姬",
+    "kr_name": "야마토 오니히메",
+    "en_name": "Yamato",
     "materials": [
       {
         "material_id": "5-21"
@@ -5004,7 +4685,7 @@
     "character_id": "10-27",
     "level": 10,
     "name": "騙人布 G.O.D",
-    "kr_name": "",
+    "kr_name": "우솝 G.O.D",
     "en_name": "",
     "materials": [
       {
@@ -5032,8 +4713,8 @@
     "character_id": "10-28",
     "level": 10,
     "name": "吉貝爾 甚平 海俠",
-    "kr_name": "",
-    "en_name": "",
+    "kr_name": "징베 어인협객",
+    "en_name": "Jinbe",
     "materials": [
       {
         "material_id": "5-7"
@@ -5056,9 +4737,9 @@
   {
     "character_id": "10-29",
     "level": 10,
-    "name": "喬巴",
-    "kr_name": "",
-    "en_name": "",
+    "name": "喬巴 船醫",
+    "kr_name": "쵸파 밀짚모자 해적단 의사",
+    "en_name": "chopper",
     "materials": [
       {
         "material_id": "5-21"
@@ -5081,9 +4762,9 @@
   {
     "character_id": "10-30",
     "level": 10,
-    "name": "克比",
-    "kr_name": "",
-    "en_name": "",
+    "name": "克比 海軍的未來",
+    "kr_name": "코비",
+    "en_name": "koby",
     "materials": [
       {
         "material_id": "5-29"
@@ -5110,7 +4791,7 @@
     "character_id": "10-31",
     "level": 10,
     "name": "庫贊 青雉 前大將",
-    "kr_name": "",
+    "kr_name": "쿠잔 전 해군대장 아오키지",
     "en_name": "",
     "materials": [
       {
@@ -5138,7 +4819,7 @@
     "character_id": "10-32",
     "level": 10,
     "name": "波魯薩利諾 黃猿",
-    "kr_name": "",
+    "kr_name": "키자루 해군대장 노란 원숭이",
     "en_name": "",
     "materials": [
       {
@@ -5168,8 +4849,8 @@
   {
     "character_id": "10-33",
     "level": 10,
-    "name": "托拉法爾加·羅",
-    "kr_name": "",
+    "name": "托拉法爾加·羅 洛基波德事件主謀",
+    "kr_name": "트라팔가 로우 로키포트 사건의 주모자",
     "en_name": "",
     "materials": [
       {
@@ -5196,8 +4877,8 @@
   {
     "character_id": "10-34",
     "level": 10,
-    "name": "佛朗基",
-    "kr_name": "",
+    "name": "佛朗基 無敵的鋼鐵海賊",
+    "kr_name": "프랑키 무적의 아이언 파이러츠",
     "en_name": "",
     "materials": [
       {
@@ -5205,6 +4886,9 @@
       },
       {
         "material_id": "8-2"
+      },
+      {
+        "material_id": "4-44"
       },
       {
         "material_id": "3-18"
@@ -5221,9 +4905,9 @@
   {
     "character_id": "10-35",
     "level": 10,
-    "name": "娜美",
-    "kr_name": "",
-    "en_name": "",
+    "name": "娜美 維薩利亞島",
+    "kr_name": "나미 웨더리아의 항해사",
+    "en_name": "Nami",
     "materials": [
       {
         "material_id": "5-19"
@@ -5249,8 +4933,8 @@
   {
     "character_id": "10-36",
     "level": 10,
-    "name": "羅賓",
-    "kr_name": "",
+    "name": "妮可·羅賓 歐哈拉的最後生還者",
+    "kr_name": "니코 로빈 오하라의 마지막 생존자",
     "en_name": "",
     "materials": [
       {
