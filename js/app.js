@@ -183,7 +183,8 @@ function createMaterialChips(record, indices) {
   return `<div class="chip-group">${record.materials
     .map((material) => {
       const label = resolveRecordLabel(material.material_id, indices);
-      return `<button type="button" class="material-chip" data-search-name="${escapeHtml(label)}" data-material-id="${escapeHtml(material.material_id)}">${escapeHtml(label)}</button>`;
+      const materialLevel = getPrimaryRecord(material.material_id, indices)?.level || 0;
+      return `<button type="button" class="material-chip badge-${materialLevel}" data-search-name="${escapeHtml(label)}" data-material-id="${escapeHtml(material.material_id)}">${escapeHtml(label)}</button>`;
     })
     .join('')}</div>`;
 }
@@ -407,7 +408,7 @@ function initTreePage(records) {
       <div class="node-card ${record.level === 0 ? 'placeholder' : ''}">
         <div class="node-title">
           <span class="badge badge-${record.level}">${escapeHtml(getLevelLabel(record.level))}</span>
-          ${titleMarkup}
+          ${titleMarkup} ${record.key_code ? '('+ record.key_code +')' : ''}
         </div>
         <div class="node-detail">
           <div style="display:none">角色 ID：${escapeHtml(record.character_id)}</div>
@@ -482,30 +483,40 @@ function initTreePage(records) {
       </div>
     `;
   }
-
+  
   function renderTree(record) {
     selectedCharacterId = record.character_id;
     const characterNameText = `${record.name}｜${getLevelLabel(record.level)} | KR: ${escapeHtml(record.kr_name || '')} | EN: ${escapeHtml(record.en_name || '')}`;
-    resultTitle.textContent = characterNameText;
+    // resultTitle.textContent = characterNameText;
     if (treeSelect) {
       syncTreeSelectOptions(record.character_id);
     }
-    rootSummary.innerHTML = `
-      <div class="tree-card">
-        <div class="node-detail">
-          <div style="display:none">角色 ID：${escapeHtml(record.character_id)}</div>
-          <div style="display:none">KR：${escapeHtml(record.kr_name || '未填寫')}</div>
-          <div style="display:none">EN：${escapeHtml(record.en_name || '未填寫')}</div>
-          <div style="display:none">材料：${escapeHtml(getMaterialNames(record, indices).join('、') || '無')}</div>
-          <div>金鑰：${record.key_code || ''}</div>
-          <div>備註：${escapeHtml(record.remark || '')}</div>
-        </div>
-      </div>
-    `;
+    // rootSummary.innerHTML = `
+    //   <div class="tree-card">
+    //     <div class="node-detail">
+    //       <div style="display:none">角色 ID：${escapeHtml(record.character_id)}</div>
+    //       <div style="display:none">KR：${escapeHtml(record.kr_name || '未填寫')}</div>
+    //       <div style="display:none">EN：${escapeHtml(record.en_name || '未填寫')}</div>
+    //       <div>金鑰：${record.key_code || ''}</div>
+    //       <div>備註：${escapeHtml(record.remark || '')}</div>
+    //       <div>總材料：${escapeHtml(formatBaseMaterialsText(record, indices))}</div>
+    //     </div>
+    //   </div>
+    // `;
     const directMaterials = record.materials || [];
     downwardContainer.innerHTML = `
       <div class="tree-card">
-        <h3>點擊往下展開</h3>
+        <h4>點擊往下展開</h4>
+        <div class="node-card ${record.level === 0 ? 'placeholder' : ''}">
+            <div class="node-title">
+              <span class="badge badge-${record.level}">${escapeHtml(getLevelLabel(record.level))}</span>
+              ${record.name} ${record.key_code ? '('+ record.key_code +')' : ''}
+            </div>
+            <div class="node-detail">
+              <div>備註：${escapeHtml(record.remark || '')}</div>
+              <div>總材料：${escapeHtml(formatBaseMaterialsText(record, indices))}</div>
+            </div>
+        </div>
         ${directMaterials.length === 0
           ? '<div class="empty-state">這個角色沒有可往下的材料。</div>'
           : `<ul class="tree-list">${directMaterials
@@ -589,6 +600,76 @@ function initTreePage(records) {
   });
 }
 
+/**
+ * 遞迴計算指定角色所需的所有基礎材料（Level 0 & Level 1）
+ * @param {Object} record - 當前要查詢的角色資料
+ * @param {Object} indices - 透過 createIndices(records) 建立的索引
+ * @param {Map} [counts=new Map()] - 用於記錄累加數量的 Map（內部遞迴用）
+ * @param {Set} [visited=new Set()] - 避免循環依賴死結（內部遞迴用）
+ * @returns {Map} 鍵為 character_id，值為總需求的數量
+ */
+function getBaseMaterialQuantities(record, indices, counts = new Map(), visited = new Set()) {
+  if (!record) return counts;
+
+  // 1. 防止防呆：避免循環合成導致無窮遞迴（死結）
+  if (visited.has(record.character_id)) {
+    return counts;
+  }
+  visited.add(record.character_id);
+
+  // 2. 判斷是否為基礎材料 (Level 0 或 Level 1)
+  // 如果是基礎材料，直接累加數量，且「不再往下拆解」
+  if (record.level === 0 || record.level === 1) {
+    const currentCount = counts.get(record.character_id) || 0;
+    counts.set(record.character_id, currentCount + 1);
+    
+    // 記得在返回前移出 visited，讓其他合成路徑可以重複使用此基礎材料
+    visited.delete(record.character_id);
+    return counts;
+  }
+
+  // 3. 如果不是基礎材料，代表需要繼續往下拆解 (遞迴)
+  const materials = record.materials || [];
+  materials.forEach((material) => {
+    const childRecord = indices.byCharacterId.get(material.material_id);
+    if (childRecord) {
+      // 遞迴呼叫下一層
+      getBaseMaterialQuantities(childRecord, indices, counts, visited);
+    } else {
+      // 防呆：如果找不到對應的資料，就把這個材料代碼當作基礎材料計算
+      const currentCount = counts.get(material.material_id) || 0;
+      counts.set(material.material_id, currentCount + 1);
+    }
+  });
+
+  // 移除當前節點的拜訪紀錄
+  visited.delete(record.character_id);
+  return counts;
+}
+
+/**
+ * 將計算出來的基礎材料轉化為文字格式（例如：A * 10 + B * 5）
+ */
+function formatBaseMaterialsText(record, indices) {
+  const countsMap = getBaseMaterialQuantities(record, indices);
+  if (countsMap.size === 0) {
+    return '無基礎材料';
+  }
+
+  const resultSegments = [];
+  countsMap.forEach((count, characterId) => {
+    // 嘗試撈出真實的中文名稱，找不到就顯示 ID
+    const childRecord = indices.byCharacterId.get(characterId);
+    const name = childRecord ? childRecord.name : characterId;
+    
+    resultSegments.push(`${name} * ${count}`);
+  });
+
+  // 用 ' + ' 把所有材料串起來
+  return resultSegments.join(' + ');
+}
+
+////////
 function initMaintenancePage(records) {
   const state = {
     records: cloneData(records),
