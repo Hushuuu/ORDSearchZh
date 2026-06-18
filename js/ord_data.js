@@ -1261,7 +1261,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "4-5",
@@ -1339,7 +1342,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "4-9",
@@ -1386,7 +1392,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "4-11",
@@ -1974,7 +1983,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "4-38",
@@ -2150,7 +2162,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "4-46",
@@ -2184,7 +2199,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "5-2",
@@ -2206,7 +2224,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-3",
@@ -2294,7 +2315,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-7",
@@ -2338,7 +2362,11 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2",
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "5-9",
@@ -2360,7 +2388,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-10",
@@ -2467,7 +2498,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-15",
@@ -2489,7 +2523,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-16",
@@ -2560,7 +2597,9 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2",
+      "stl-4-2"
     ]
   },
   {
@@ -2610,7 +2649,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-4-2"
     ]
   },
   {
@@ -2633,7 +2673,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-22",
@@ -2699,7 +2742,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "木*3",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "5-25",
@@ -2721,7 +2767,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "5-26",
@@ -2743,7 +2792,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-27",
@@ -2765,7 +2817,11 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-28",
@@ -2787,7 +2843,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-29",
@@ -2809,7 +2868,11 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-30",
@@ -2853,7 +2916,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "5-32",
@@ -2877,7 +2943,9 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2",
+      "stl-4-2"
     ]
   },
   {
@@ -2903,7 +2971,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "5-34",
@@ -2927,7 +2998,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-4-2"
     ]
   },
   {
@@ -2952,7 +3024,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-3"
     ]
   },
   {
@@ -2997,7 +3070,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-1"
+    ]
   },
   {
     "character_id": "5-38",
@@ -3019,7 +3095,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "木*3",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "5-39",
@@ -3097,7 +3176,10 @@ window.ORD_DATA = [
     "key_code": "sunny",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "6-2",
@@ -3119,7 +3201,10 @@ window.ORD_DATA = [
     "key_code": "kiku",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "6-3",
@@ -3218,7 +3303,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-4-2"
     ]
   },
   {
@@ -3241,7 +3327,10 @@ window.ORD_DATA = [
     "key_code": "baratie",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "6-8",
@@ -3287,7 +3376,9 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-3",
+      "stl-4-2"
     ]
   },
   {
@@ -3350,7 +3441,10 @@ window.ORD_DATA = [
     "key_code": "maxim",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-1"
+    ]
   },
   {
     "character_id": "6-13",
@@ -3377,7 +3471,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-3"
     ]
   },
   {
@@ -3403,7 +3498,10 @@ window.ORD_DATA = [
     "key_code": "Bonkurei",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "6-15",
@@ -3428,7 +3526,10 @@ window.ORD_DATA = [
     "key_code": "ryokugyu",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "6-16",
@@ -3453,7 +3554,10 @@ window.ORD_DATA = [
     "key_code": "vergo",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "6-17",
@@ -3475,7 +3579,10 @@ window.ORD_DATA = [
     "key_code": "mihawk",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "6-18",
@@ -3494,7 +3601,10 @@ window.ORD_DATA = [
     "key_code": "rebecca",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "6-19",
@@ -3516,7 +3626,10 @@ window.ORD_DATA = [
     "key_code": "sabo",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "6-20",
@@ -3563,7 +3676,10 @@ window.ORD_DATA = [
     "key_code": "akainu",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "6-22",
@@ -3610,7 +3726,11 @@ window.ORD_DATA = [
     "key_code": "killer",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "7-1",
@@ -3632,7 +3752,10 @@ window.ORD_DATA = [
     "key_code": "koala",
     "remark": "木*3",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "7-2",
@@ -3654,7 +3777,11 @@ window.ORD_DATA = [
     "key_code": "queen",
     "remark": "木*3",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "7-3",
@@ -3676,7 +3803,11 @@ window.ORD_DATA = [
     "key_code": "blackmaria",
     "remark": "木*3",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "7-4",
@@ -3725,7 +3856,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-4-2"
     ]
   },
   {
@@ -3754,7 +3886,10 @@ window.ORD_DATA = [
     "key_code": "perona",
     "remark": "木*3",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-1"
+    ]
   },
   {
     "character_id": "8-1",
@@ -3792,7 +3927,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "木頭*10",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "8-3",
@@ -3811,7 +3949,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "木頭*10",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "8-4",
@@ -3874,7 +4015,11 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "30000金 + 木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "9-2",
@@ -3899,7 +4044,11 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "5000金 + 木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-1"
+    ]
   },
   {
     "character_id": "9-3",
@@ -3921,7 +4070,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "能力點*4 + 5000金 + 木頭*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "9-4",
@@ -3943,7 +4095,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "5000金 + 木頭*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "9-5",
@@ -3974,7 +4129,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "5000金 + 木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "9-6",
@@ -3996,7 +4154,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "5000金 + 木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "9-7",
@@ -4040,7 +4201,11 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "5000金 + 木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "9-9",
@@ -4062,7 +4227,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "5000金+木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "9-10",
@@ -4126,7 +4294,10 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2",
+      "stl-1-3",
+      "stl-4-2"
     ]
   },
   {
@@ -4154,7 +4325,10 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2",
+      "stl-1-3",
+      "stl-4-2"
     ]
   },
   {
@@ -4182,7 +4356,10 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2",
+      "stl-1-3",
+      "stl-4-2"
     ]
   },
   {
@@ -4210,7 +4387,10 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2",
+      "stl-1-3",
+      "stl-4-2"
     ]
   },
   {
@@ -4239,7 +4419,10 @@ window.ORD_DATA = [
     "key_code": "bonney tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-8",
@@ -4267,7 +4450,10 @@ window.ORD_DATA = [
     "key_code": "zoro tr",
     "remark": "能力點 * 4 升一次 + 道具秋水再升一次",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-10",
@@ -4326,7 +4512,10 @@ window.ORD_DATA = [
     "key_code": "snakeman tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "10-12",
@@ -4351,7 +4540,10 @@ window.ORD_DATA = [
     "key_code": "lucci tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "10-13",
@@ -4382,7 +4574,10 @@ window.ORD_DATA = [
     "key_code": "joker tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-14",
@@ -4407,7 +4602,10 @@ window.ORD_DATA = [
     "key_code": "fujitora tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-15",
@@ -4432,7 +4630,10 @@ window.ORD_DATA = [
     "key_code": "teach tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "10-16",
@@ -4457,7 +4658,10 @@ window.ORD_DATA = [
     "key_code": "luffy tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-17",
@@ -4485,7 +4689,10 @@ window.ORD_DATA = [
     "key_code": "hawkins tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-18",
@@ -4513,7 +4720,11 @@ window.ORD_DATA = [
     "key_code": "brook tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2",
+      "stl-4-1"
+    ]
   },
   {
     "character_id": "10-19",
@@ -4541,7 +4752,11 @@ window.ORD_DATA = [
     "key_code": "tashigi tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-20",
@@ -4569,7 +4784,11 @@ window.ORD_DATA = [
     "key_code": "sabo tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-21",
@@ -4594,7 +4813,10 @@ window.ORD_DATA = [
     "key_code": "sanji tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "10-22",
@@ -4622,7 +4844,10 @@ window.ORD_DATA = [
     "key_code": "shanks tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "10-23",
@@ -4672,7 +4897,10 @@ window.ORD_DATA = [
     "key_code": "ryokugyu tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-25",
@@ -4697,7 +4925,10 @@ window.ORD_DATA = [
     "key_code": "akainu tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "10-26",
@@ -4728,7 +4959,10 @@ window.ORD_DATA = [
     "key_code": "yamato tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-27",
@@ -4756,7 +4990,11 @@ window.ORD_DATA = [
     "key_code": "usopp tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-28",
@@ -4781,7 +5019,11 @@ window.ORD_DATA = [
     "key_code": "jinbe tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2",
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "10-29",
@@ -4808,7 +5050,9 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2",
+      "stl-4-2"
     ]
   },
   {
@@ -4837,7 +5081,10 @@ window.ORD_DATA = [
     "key_code": "koby tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "10-31",
@@ -4896,7 +5143,10 @@ window.ORD_DATA = [
     "key_code": "kizaru tr",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "10-33",
@@ -4926,7 +5176,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-3"
     ]
   },
   {
@@ -5013,7 +5264,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-4-2"
     ]
   },
   {
@@ -5058,7 +5310,10 @@ window.ORD_DATA = [
     "key_code": "dragon im",
     "remark": "木*10",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "11-3",
@@ -5080,7 +5335,10 @@ window.ORD_DATA = [
     "key_code": "rayleigh im",
     "remark": "木*10",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "11-4",
@@ -5318,7 +5576,10 @@ window.ORD_DATA = [
     "key_code": "nika et",
     "remark": "木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "12-2",
@@ -5346,7 +5607,10 @@ window.ORD_DATA = [
     "key_code": "nika et",
     "remark": "木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "12-3",
@@ -5435,7 +5699,9 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2",
+      "stl-4-1"
     ]
   },
   {
@@ -5458,7 +5724,10 @@ window.ORD_DATA = [
     "key_code": "tesoro et",
     "remark": "木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "12-8",
@@ -5547,7 +5816,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-1-2"
     ]
   },
   {
@@ -5576,7 +5846,10 @@ window.ORD_DATA = [
     "key_code": "hancock et",
     "remark": "木*5",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-1"
+    ]
   },
   {
     "character_id": "12-12",
@@ -5674,7 +5947,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "甘城輝煌樂園救世主",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "16-5",
@@ -5749,7 +6025,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "食靈",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "16-11",
@@ -5797,7 +6076,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "物語系列",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2"
+    ]
   },
   {
     "character_id": "18-1",
@@ -5893,7 +6175,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "10000金 + 木*7",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "18-4",
@@ -5921,7 +6206,11 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "10000金 + 木*7",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-2",
+      "stl-4-1"
+    ]
   },
   {
     "character_id": "18-5",
@@ -5983,7 +6272,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "10000金+木*7",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "18-7",
@@ -6044,7 +6336,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-4-2"
     ]
   },
   {
@@ -6076,7 +6369,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "10000金 + 木*7",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-1-3"
+    ]
   },
   {
     "character_id": "18-10",
@@ -6135,7 +6431,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "10000金 + 木*7",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   },
   {
     "character_id": "18-12",
@@ -6237,7 +6536,8 @@ window.ORD_DATA = [
     "major": "",
     "suitable_partners": [],
     "skill_types": [
-      "stl-1-1"
+      "stl-1-1",
+      "stl-4-2"
     ]
   },
   {
@@ -6257,7 +6557,10 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-1"
+    ]
   },
   {
     "character_id": "23-4",
@@ -6276,6 +6579,9 @@ window.ORD_DATA = [
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": [
+      "stl-4-2"
+    ]
   }
 ]
