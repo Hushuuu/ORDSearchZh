@@ -1,6 +1,7 @@
 (() => {
   const {
     LEVEL_LABELS,
+    createSkillTypeOptions,
     createIndices,
     escapeHtml,
     formatBaseMaterialsText,
@@ -83,6 +84,8 @@
     const indices = createIndices(records);
     const compSearchInput = document.getElementById('compSearchInput');
     const levelCheckboxGroup = document.getElementById('levelCheckboxGroup');
+    const skillTypeCheckboxGroup = document.getElementById('skillTypeCheckboxGroup');
+    const compFiltersBody = document.getElementById('compFiltersBody');
     const compSummaryText = document.getElementById('compSummaryText');
     const compCharacterGroups = document.getElementById('compCharacterGroups');
     const selectedTeamList = document.getElementById('selectedTeamList');
@@ -90,13 +93,22 @@
     const analyzeTeamBtn = document.getElementById('analyzeTeamBtn');
     const clearTeamBtn = document.getElementById('clearTeamBtn');
     const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    const toggleCompFiltersBtn = document.getElementById('toggleCompFiltersBtn');
 
     let selectedTeamIds = readStoredArray(localStorage, 'selectedTeamIds').filter((id) => indices.byCharacterId.has(id));
     let checkedLevels = new Set();
+    let checkedSkillTypes = new Set();
     let searchKeyword = '';
+    let areFiltersCollapsed = localStorage.getItem('compFiltersCollapsed') === 'true';
 
     function persistSelectedTeam() {
       writeStoredArray(localStorage, 'selectedTeamIds', selectedTeamIds);
+    }
+
+    function updateFilterCollapseUI() {
+      compFiltersBody.classList.toggle('is-hidden', areFiltersCollapsed);
+      toggleCompFiltersBtn.setAttribute('aria-expanded', String(!areFiltersCollapsed));
+      toggleCompFiltersBtn.textContent = areFiltersCollapsed ? '展開條件' : '收合條件';
     }
 
     function renderLevelCheckboxes() {
@@ -125,6 +137,30 @@
             });
             levelCheckboxGroup.appendChild(checkboxLabel);
         }
+      });
+    }
+
+    function renderSkillTypeCheckboxes() {
+      skillTypeCheckboxGroup.innerHTML = createSkillTypeOptions()
+        .map(
+          ({ value, label }) => `
+            <label class="checkbox-badge">
+              <input type="checkbox" value="${escapeHtml(value)}" ${checkedSkillTypes.has(value) ? 'checked' : ''}>
+              <span class="checkbox-badge-label">${escapeHtml(label)}</span>
+            </label>
+          `
+        )
+        .join('');
+
+      skillTypeCheckboxGroup.querySelectorAll('input').forEach((input) => {
+        input.addEventListener('change', () => {
+          if (input.checked) {
+            checkedSkillTypes.add(input.value);
+          } else {
+            checkedSkillTypes.delete(input.value);
+          }
+          renderCharactersList();
+        });
       });
     }
 
@@ -170,6 +206,13 @@
       const filteredRecords = indices.records.filter((record) => {
         if (checkedLevels.size > 0 && !checkedLevels.has(record.level)) {
           return false;
+        }
+        if (checkedSkillTypes.size > 0) {
+          const recordSkillTypes = new Set((record.skill_types || []).map(String));
+          const hasMatchedSkill = Array.from(checkedSkillTypes).some((skillType) => recordSkillTypes.has(skillType));
+          if (!hasMatchedSkill) {
+            return false;
+          }
         }
         if (searchKeyword) {
           return getSearchableText(record, indices).includes(searchKeyword);
@@ -286,10 +329,20 @@
       compSearchInput.value = '';
       searchKeyword = '';
       checkedLevels.clear();
+      checkedSkillTypes.clear();
       levelCheckboxGroup.querySelectorAll('input').forEach((input) => {
         input.checked = false;
       });
+      skillTypeCheckboxGroup.querySelectorAll('input').forEach((input) => {
+        input.checked = false;
+      });
       renderCharactersList();
+    });
+
+    toggleCompFiltersBtn.addEventListener('click', () => {
+      areFiltersCollapsed = !areFiltersCollapsed;
+      localStorage.setItem('compFiltersCollapsed', areFiltersCollapsed ? 'true' : 'false');
+      updateFilterCollapseUI();
     });
 
     clearTeamBtn.addEventListener('click', () => {
@@ -314,6 +367,8 @@
     });
 
     renderLevelCheckboxes();
+    renderSkillTypeCheckboxes();
+    updateFilterCollapseUI();
     renderTeamPanel();
     renderCharactersList();
   }

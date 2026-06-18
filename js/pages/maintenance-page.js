@@ -3,6 +3,7 @@
     clearToast,
     cloneData,
     compareRecords,
+    createSkillTypeOptions,
     createIndices,
     createTomSelectOptions,
     createTomSelectRenderConfig,
@@ -30,6 +31,7 @@
     const materialChips = document.getElementById('fieldMaterialsChips');
     const clearMaterialsButton = document.getElementById('clearMaterialsButton');
     const partnerPickerSelect = document.getElementById('partnerPickerSelect');
+    const skillTypesGroup = document.getElementById('fieldSkillTypesGroup');
     const hasTomSelect = typeof window.TomSelect === 'function';
 
     const fields = {
@@ -74,6 +76,24 @@
       : null;
 
     fillLevelSelect(fields.level);
+
+    function renderSkillTypeCheckboxes(selectedSkillTypes = []) {
+      const selectedSet = new Set((selectedSkillTypes || []).map(String));
+      skillTypesGroup.innerHTML = createSkillTypeOptions()
+        .map(
+          ({ value, label }) => `
+            <label class="checkbox-badge">
+              <input type="checkbox" value="${escapeHtml(value)}" ${selectedSet.has(value) ? 'checked' : ''}>
+              <span class="checkbox-badge-label">${escapeHtml(label)}</span>
+            </label>
+          `
+        )
+        .join('');
+    }
+
+    function getSelectedSkillTypes() {
+      return Array.from(skillTypesGroup.querySelectorAll('input:checked')).map((input) => input.value);
+    }
 
     function getIndices(nextRecords = state.records) {
       return createIndices(nextRecords);
@@ -208,6 +228,7 @@
         if (partnerPicker) {
           partnerPicker.clear(true);
         }
+        renderSkillTypeCheckboxes();
         preview.textContent = '尚未選擇資料。';
         return;
       }
@@ -220,6 +241,7 @@
       fields.key_code.value = record.key_code || '';
       fields.major.value = record.major || '';
       fields.remark.value = record.remark || '';
+      renderSkillTypeCheckboxes(record.skill_types || []);
       state.materialDraft = (record.materials || []).map((material) => material.material_id);
       renderMaterialDraft();
       if (materialPicker) {
@@ -268,6 +290,7 @@
       }
 
       const nextMaterials = state.materialDraft.map((materialId) => ({ material_id: materialId }));
+      const nextSkillTypes = getSelectedSkillTypes();
       const selectedPartners = partnerPicker
         ? Array.isArray(partnerPicker.getValue())
           ? partnerPicker.getValue()
@@ -311,6 +334,7 @@
         key_code: fields.key_code.value.trim(),
         major: fields.major.value.trim(),
         remark: fields.remark.value.trim(),
+        skill_types: nextSkillTypes,
         materials: nextMaterials,
         suitable_partners: nextPartners
       });
@@ -333,6 +357,7 @@
         key_code: '',
         remark: '',
         major: '',
+        skill_types: [],
         suitable_partners: []
       };
 
@@ -411,6 +436,7 @@
       state.selectedRecordId = [...state.records].sort(compareRecords)[0].character_id;
     }
 
+    renderSkillTypeCheckboxes();
     syncMaintenancePickers();
     renderList();
     fillForm();

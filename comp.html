@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>隊伍組成 - ORD</title>
-    <link rel="stylesheet" href="css/styles.css?v=260618002">
+    <link rel="stylesheet" href="css/styles.css?v=260618003">
 </head>
 
 <body data-page="comp">
@@ -32,6 +32,11 @@
                     <p class="panel-desc">已選取的隊伍角色</p>
                 </div>
                 <div class="panel-body team-body">
+                    <div class="team-actions">
+                        <button id="analyzeTeamBtn" class="success full-width-btn" type="button">分析隊伍 (合成樹)</button>
+                        <button id="clearTeamBtn" class="secondary full-width-btn" type="button"
+                            style="margin-top: 8px;">清空隊伍</button>
+                    </div>
                     <div id="selectedTeamList" class="team-list-container">
                         <div class="empty-state">尚未選取任何角色。</div>
                     </div>
@@ -43,12 +48,6 @@
                         <div id="teamMaterialsList" class="materials-list">
                             <span class="muted">無</span>
                         </div>
-                    </div>
-
-                    <div class="team-actions">
-                        <button id="analyzeTeamBtn" class="success full-width-btn" type="button">分析隊伍 (合成樹)</button>
-                        <button id="clearTeamBtn" class="secondary full-width-btn" type="button"
-                            style="margin-top: 8px;">清空隊伍</button>
                     </div>
                 </div>
             </aside>
@@ -62,26 +61,47 @@
                 <div class="panel-body">
                     <!-- 篩選器 -->
                     <div class="comp-controls">
-                        <div class="controls-row">
-                            <div class="field-group">
-                                <span class="field-label">搜尋名稱</span>
-                                <input id="compSearchInput" class="field-input" type="text" placeholder="">
+                        <div class="comp-controls-header">
+                            <div>
+                                <div class="field-label">搜尋條件</div>
+                                <div class="helper-text">可收合篩選條件。</div>
+                            </div>
+                            <div class="controls-actions comp-controls-header-actions">
+                                <button id="toggleCompFiltersBtn" class="secondary" type="button" aria-expanded="true"
+                                    aria-controls="compFiltersBody">收合條件</button>
+                                <button id="resetFiltersBtn" class="secondary" type="button">重置篩選</button>
                             </div>
                         </div>
 
-                        <div class="controls-row" style="margin-top: 14px;">
-                            <div class="field-group">
-                                <span class="field-label">稀有度</span>
-                                <div id="levelCheckboxGroup" class="checkbox-badge-grid">
-                                    <!-- JS 動態生成稀有度複選框 -->
+                        <div id="compFiltersBody" class="comp-controls-body">
+                            <div class="controls-row">
+                                <div class="field-group">
+                                    <span class="field-label">搜尋名稱</span>
+                                    <input id="compSearchInput" class="field-input" type="text" placeholder="">
+                                </div>
+                            </div>
+
+                            <div class="controls-row" style="margin-top: 14px;">
+                                <div class="field-group">
+                                    <span class="field-label">稀有度</span>
+                                    <div id="levelCheckboxGroup" class="checkbox-badge-grid">
+                                        <!-- JS 動態生成稀有度複選框 -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="controls-row" style="margin-top: 14px;">
+                                <div class="field-group">
+                                    <span class="field-label">技能類型(尚無資料)</span>
+                                    <div id="skillTypeCheckboxGroup" class="checkbox-badge-grid">
+                                        <!-- JS 動態生成技能複選框 -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="controls-row"
-                            style="margin-top: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+                        <div class="controls-row" style="margin-top: 16px;">
                             <div id="compSummaryText" class="summary-text">載入中...</div>
-                            <button id="resetFiltersBtn" class="secondary" type="button">重置篩選</button>
                         </div>
                     </div>
 
@@ -94,10 +114,10 @@
         </div>
     </div>
 
-    <script src="js/ord_data.js?v=260618002"></script>
-    <script src="js/shared/app-shared.js?v=260618002"></script>
-    <script src="js/pages/comp-page.js?v=260618002"></script>
-    <script src="js/app.js?v=260618002"></script>
+    <script src="js/ord_data.js?v=260618003"></script>
+    <script src="js/shared/app-shared.js?v=260618003"></script>
+    <script src="js/pages/comp-page.js?v=260618003"></script>
+    <script src="js/app.js?v=260618003"></script>
 </body>
 
 </html>

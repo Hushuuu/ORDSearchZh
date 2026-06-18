@@ -1,3 +1,50 @@
+/*
+## ⚔️ 攻擊與傷害強化
+
+* 전체 공격력 버프 (공증)：全體攻擊力 Buff（增攻）
+* 공격속도 버프 (공속)：攻擊速度 Buff（攻速）
+* 광폭화 특화 (광폭화)：狂暴化特化（狂暴）
+* 마법데미지 증폭 (도킹)：魔法傷害增幅（Docking / 降魔抗增傷）
+* 스플래시 데미지 (스플뎀)：濺射傷害 / 擴散傷害（濺射）
+* 폭발형 데미지 증폭 (폭발형 증폭)：爆炸型傷害增幅（爆炸增幅）
+
+## 🎯 單體百分比與斬殺傷害
+
+* 단일 적 잃은체력 %데미지 (단일-잃퍼)：單體敵人已損失血量 % 傷害（單體-損血%）
+* 단일 적 전체체력 %데미지 (끝딜)：單體敵人總血量 % 傷害（收尾輸出 / 斬殺）
+* 단일 적 현재체력 %데미지 (단일)：單體敵人當前血量 % 傷害（單體）
+
+## 💥 範圍百分比傷害
+
+* 범위 적 잃은체력 %데미지 (범퍼-잃퍼)：範圍敵人已損失血量 % 傷害（範圍-損血%）
+* 범위 적 전체체력 %데미지 (범퍼-전퍼)：範圍敵人總血量 % 傷害（範圍-總血%）
+* 범위 적 현재체력 %데미지 (범퍼-현퍼)：範圍敵人當前血量 % 傷害（範圍-當前%）
+
+## 🛡️ 削弱與穿透效果
+
+* 마법방어력 감소 (마방깍)：減少魔法防禦力（減魔防）
+* 방어력 감소 (방깍)：減少防禦力（減防）
+* 방어무시 데미지 (방무뎀)：無視防禦傷害（無視防禦）
+* 아머브레이크 (암브)：破甲效果（破甲）
+
+## 🛑 控制與異常狀態
+
+* 단일 적 스턴 (단일스턴)：單體敵人暈眩（單體暈）
+* 범위스턴 (스턴)：範圍暈眩（暈眩）
+* 이동속도 감소 (이감)：減少移動速度（緩速）
+
+## 🗺️ 機動性與特殊機制
+
+* 공중이동 (공중이동)：空中移動（空中移動）
+* 순간이동 (순간이동)：瞬間移動 / 閃現（瞬移）
+* 보스특화 (보스)：Boss 特化（Boss）
+* 유닛삭제 (삭제)：秒殺單位 / 移除單位（秒殺）
+
+## 🧪 恢復與續航
+
+* 마나회복 (마나젠)：魔力回復 / 回魔（回魔）
+* 체력회복 (체젠)：生命回復 / 回血（回血）
+*/
 (() => {
   const app = window.ORDApp || (window.ORDApp = {});
 
@@ -19,6 +66,42 @@
     18: '神秘',
     23: '熾天使',
   };
+
+  const SKILL_TYPE_LABELS = {
+    // 攻擊與傷害強化
+    'stl-1-1': '全體攻擊力 Buff',
+    'stl-1-2': '攻擊速度 Buff',
+    'stl-1-3': '狂暴化特化',
+    'stl-1-4': '魔法傷害增幅',
+    'stl-1-5': '濺射傷害',
+    'stl-1-6': '爆炸型傷害增幅',
+    // 單體百分比與斬殺傷害
+    'stl-2-1': '單體已損失血量 % 傷',
+    'stl-2-2': '單體總血量 % 傷',
+    'stl-2-3': '單體當前血量 % 傷',
+    // 範圍百分比傷害
+    'stl-3-1': '範圍已損失血量 % 傷',
+    'stl-3-2': '範圍總血量 % 傷',
+    'stl-3-3': '範圍當前血量 % 傷',
+    // 削弱與穿透效果
+    'stl-4-1': '減少魔法防禦',
+    'stl-4-2': '減少防禦',
+    'stl-4-3': '無視防禦',
+    'stl-4-4': '破甲',
+    // 控制與異常狀態
+    'stl-5-1': '單體暈',
+    'stl-5-2': '範圍暈',
+    'stl-5-3': '緩速',
+    // 機動性與特殊機制
+    'stl-6-1': '空中移動',
+    'stl-6-2': '瞬移',
+    'stl-6-3': 'Boss 特化',
+    'stl-6-4': '秒殺單位',
+    // 恢復與續航
+    'stl-7-1': '魔力回復',
+    'stl-7-2': '生命回復',
+  }
+  
 
   function cloneData(data) {
     return JSON.parse(JSON.stringify(data || []));
@@ -109,6 +192,18 @@
     return (record.materials || []).map((material) => resolveRecordLabel(material.material_id, indices));
   }
 
+  function getSkillTypeLabel(skillType) {
+    return SKILL_TYPE_LABELS[skillType] || skillType;
+  }
+
+  function getSkillTypeLabels(skillTypes) {
+    return (skillTypes || []).map((skillType) => getSkillTypeLabel(skillType));
+  }
+
+  function createSkillTypeOptions() {
+    return Object.entries(SKILL_TYPE_LABELS).map(([value, label]) => ({ value, label }));
+  }
+
   function getSearchableText(record, indices) {
     return [
       record.character_id,
@@ -120,6 +215,8 @@
       record.major,
       getLevelLabel(record.level),
       ...getMaterialNames(record, indices),
+      ...(record.skill_types || []),
+      ...getSkillTypeLabels(record.skill_types),
       ...(record.suitable_partners || []).map((partner) => resolveRecordLabel(partner.character_id, indices))
     ]
       .filter(Boolean)
@@ -325,6 +422,7 @@
 
   Object.assign(app, {
     LEVEL_LABELS,
+    SKILL_TYPE_LABELS,
     cloneData,
     normalizeText,
     escapeHtml,
@@ -334,6 +432,9 @@
     getPrimaryRecord,
     resolveRecordLabel,
     getMaterialNames,
+    getSkillTypeLabel,
+    getSkillTypeLabels,
+    createSkillTypeOptions,
     getSearchableText,
     fillLevelSelect,
     markActiveNav,

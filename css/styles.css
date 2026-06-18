@@ -308,7 +308,7 @@ button.success {
 }
 
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 
 .controls-actions,
@@ -993,6 +993,29 @@ button.success {
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.2);
 }
 
+.comp-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.comp-controls-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.comp-controls-header-actions {
+  margin-top: 0;
+}
+
+.comp-controls-body {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Character group list rendering style */
 .character-groups-stack {
   display: flex;
@@ -1204,4 +1227,3 @@ button.success {
   color: var(--primary-color);
   font-weight: 700;
 }
-
