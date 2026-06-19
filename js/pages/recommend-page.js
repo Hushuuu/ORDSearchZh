@@ -51,13 +51,15 @@
 
     visited.add(record.character_id);
 
+    const available = inventory.get(record.character_id) || 0;
+    if (available > 0) {
+      inventory.set(record.character_id, available - 1);
+      visited.delete(record.character_id);
+      return counts;
+    }
+
     if (record.level <= 1) {
-      const available = inventory.get(record.character_id) || 0;
-      if (available > 0) {
-        inventory.set(record.character_id, available - 1);
-      } else {
-        counts.set(record.character_id, (counts.get(record.character_id) || 0) + 1);
-      }
+      counts.set(record.character_id, (counts.get(record.character_id) || 0) + 1);
       visited.delete(record.character_id);
       return counts;
     }
@@ -165,7 +167,7 @@
           const rightTotal = [...rightCount.values()].reduce((sum, value) => sum + value, 0);
           return leftTotal - rightTotal || compareRecords(left.record, right.record);
         });
-      const candidates = allCandidates.filter(({ record }) => !dismissedCharacterIds.has(record.character_id)).slice(0, 4);
+      const candidates = allCandidates.filter(({ record }) => !dismissedCharacterIds.has(record.character_id)).slice(0, 6);
 
       //summary.textContent = `目標稀有度：${targetLevel}｜${getLevelLabel(targetLevel)}`;
 
@@ -182,7 +184,14 @@
               <strong>${escapeHtml(record.name)} ${record.key_code ? `(${escapeHtml(record.key_code)})` : ''}</strong>
               <button type="button" class="secondary recommend-dismiss-btn" data-dismiss-character="${escapeHtml(record.character_id)}" aria-label="隱藏此推薦">×</button>
             </div>
-            <div class="recommend-card-meta">材料：${escapeHtml(getMaterialNames(record, indices).join('、') || '無')}</div>
+            <div class="recommend-card-meta">材料：${(record.materials || [])
+              .map((material) => {
+                const childRecord = getPrimaryRecord(material.material_id, indices);
+                const label = childRecord ? childRecord.name : material.material_id;
+                const levelClass = childRecord ? `badge-${childRecord.level}` : 'badge-0';
+                return `<span style="font-size:0.7rem;" class="badge ${levelClass}">${escapeHtml(label)}</span>`;
+              })
+              .join(' ')}${!(record.materials || []).length ? '<span class="muted">無</span>' : ''}</div>
             <div class="recommend-card-foot">
               <span class="recommend-shortage ${requiredText === '無需額外素材' ? 'is-ready' : ''}">${requiredText === '無需額外素材' ? '可合成' : `需：${escapeHtml(requiredText)}`}</span>
               <span class="muted"></span>

@@ -576,6 +576,8 @@ button.success {
   display: flex;
   flex-direction: column;
   gap: 12px;
+  max-height: 575px;
+  overflow: auto;
 }
 
 .recommend-card {
@@ -618,6 +620,7 @@ button.success {
   background: rgba(245, 158, 11, 0.14);
   color: #ffe6b0;
   font-weight: 700;
+  font-size: 0.75rem;
 }
 
 .recommend-shortage.is-ready {
