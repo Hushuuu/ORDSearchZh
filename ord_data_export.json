@@ -855,7 +855,7 @@
   {
     "character_id": "3-18",
     "level": 3,
-    "name": "海賊合體5號 機器人",
+    "name": "海賊合體5號 佛朗基",
     "kr_name": "파이러츠 도킹 5 거대 로봇 전사",
     "en_name": "",
     "materials": [
@@ -872,7 +872,8 @@
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": []
   },
   {
     "character_id": "3-19",
@@ -1964,7 +1965,8 @@
     "key_code": "",
     "remark": "",
     "major": "",
-    "suitable_partners": []
+    "suitable_partners": [],
+    "skill_types": []
   },
   {
     "character_id": "4-35",
@@ -3350,7 +3352,7 @@
   {
     "character_id": "6-2",
     "level": 6,
-    "name": "小菊 和之國",
+    "name": "菊之丞 和之國",
     "kr_name": "키쿠 잔설",
     "en_name": "",
     "materials": [
@@ -4933,9 +4935,6 @@
     "kr_name": "후지토라 해군 대장 '성난 보라호랑이'",
     "en_name": "",
     "materials": [
-      {
-        "material_id": "2-11"
-      },
       {
         "material_id": "5-37"
       },

@@ -106,7 +106,8 @@
     return segments.join(' + ') || '無需額外素材';
   }
 
-  function collectOwnedTierCountsFromRecord(record, inventory, indices, counts = new Map(), visited = new Set(), isRoot = false) {
+  // 以缺口等級分布來評分：先比高 lv 缺了幾個，再比低 lv 缺口。
+  function collectMissingTierCountsFromRecord(record, inventory, indices, counts = new Map(), visited = new Set()) {
     if (!record || visited.has(record.character_id)) {
       return counts;
     }
@@ -114,28 +115,35 @@
     visited.add(record.character_id);
 
     const available = inventory.get(record.character_id) || 0;
-    if (!isRoot && record.level >= 2 && available > 0) {
+    if (available > 0) {
+      inventory.set(record.character_id, available - 1);
+      visited.delete(record.character_id);
+      return counts;
+    }
+
+    const materials = record.materials || [];
+    if (!materials.length || record.level <= 1) {
       counts.set(record.level, (counts.get(record.level) || 0) + 1);
       visited.delete(record.character_id);
       return counts;
     }
 
-    if (record.level > 2) {
-      (record.materials || []).forEach((material) => {
-        const childRecord = indices.byCharacterId.get(material.material_id);
-        if (childRecord) {
-          collectOwnedTierCountsFromRecord(childRecord, inventory, indices, counts, visited);
-        }
-      });
-    }
+    materials.forEach((material) => {
+      const childRecord = indices.byCharacterId.get(material.material_id);
+      if (childRecord) {
+        collectMissingTierCountsFromRecord(childRecord, inventory, indices, counts, visited);
+      } else {
+        counts.set(record.level, (counts.get(record.level) || 0) + 1);
+      }
+    });
 
     visited.delete(record.character_id);
     return counts;
   }
 
-  function compareOwnedTierCounts(leftCounts, rightCounts, levelsDesc) {
+  function compareMissingTierCounts(leftCounts, rightCounts, levelsDesc) {
     for (const level of levelsDesc) {
-      const diff = (rightCounts.get(level) || 0) - (leftCounts.get(level) || 0);
+      const diff = (leftCounts.get(level) || 0) - (rightCounts.get(level) || 0);
       if (diff !== 0) {
         return diff;
       }
@@ -256,7 +264,7 @@
     const level2Records = [...records.filter((record) => record.level === 2)].sort(compareRecords);
     const extraRecords = [...records.filter((record) => record.level > 2)].sort(compareRecords);
     const targetOptions = buildTargetLevelOptions(records);
-    const ownedPriorityLevels = [...new Set(records.map((record) => Number(record.level)).filter((level) => Number.isFinite(level) && level >= 2))]
+    const shortagePriorityLevels = [...new Set(records.map((record) => Number(record.level)).filter((level) => Number.isFinite(level) && level >= 0))]
       .sort((left, right) => right - left);
     const hasTomSelect = typeof window.TomSelect === 'function';
     const defaultTargetLevels = new Set([5]);
@@ -384,22 +392,21 @@
             .filter((record) => record.level === targetLevel && !defaultDismissedIds.includes(record.character_id))
             .map((record) => {
               const requiredCounts = collectRequiredBaseMaterialsCounts(record.character_id, new Map(inventory), indices);
-              const ownedTierCounts = collectOwnedTierCountsFromRecord(record, inventory, indices, new Map(), new Set(), true);
+              const missingTierCounts = collectMissingTierCountsFromRecord(record, new Map(inventory), indices);
               return {
                 record,
                 requiredCounts,
                 requiredText: formatRequiredBaseMaterialsFromCounts(requiredCounts, indices),
-                shortageTotal: countMapTotal(requiredCounts),
-                ownedTierCounts,
+                missingTierCounts,
               };
             })
             .sort((left, right) => {
-              const ownedCompare = compareOwnedTierCounts(left.ownedTierCounts, right.ownedTierCounts, ownedPriorityLevels);
-              if (ownedCompare !== 0) {
-                return ownedCompare;
+              const shortageCompare = compareMissingTierCounts(left.missingTierCounts, right.missingTierCounts, shortagePriorityLevels);
+              if (shortageCompare !== 0) {
+                return shortageCompare;
               }
 
-              return left.shortageTotal - right.shortageTotal || compareRecords(left.record, right.record);
+              return compareRecords(left.record, right.record);
             })
             .filter(({ record }) => !dismissedCharacterIds.has(record.character_id))
             .slice(0, 6);
