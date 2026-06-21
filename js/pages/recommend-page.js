@@ -7,14 +7,13 @@
     escapeHtml,
     getLevelLabel,
     getPrimaryRecord,
-    getMaterialNames,
   } = window.ORDApp;
 
   function buildTargetLevelOptions(records) {
     const levels = [...new Set(records.map((record) => Number(record.level)).filter((level) => Number.isFinite(level) && level >= 2))]
       .sort((left, right) => left - right);
 
-    return levels.map((level) => ({ value: String(level), label: `${level}｜${getLevelLabel(level)}` }));
+    return levels.map((level) => ({ value: level, label: `${level}｜${getLevelLabel(level)}` }));
   }
 
   function countMapTotal(counts) {
@@ -25,19 +24,30 @@
     return total;
   }
 
-  function createInventoryMap(records, lv1Inputs, selectedOwnedIds) {
+  function normalizeOwnedValues(value) {
+    if (Array.isArray(value)) {
+      return value;
+    }
+
+    if (value === null || value === undefined || value === '') {
+      return [];
+    }
+
+    return [value];
+  }
+
+  function createInventoryMap(records, ownedCountsByLevel, selectedOwnedIds) {
     const map = new Map();
 
     records.forEach((record) => {
       map.set(record.character_id, 0);
     });
 
-    lv1Inputs.forEach((record) => {
-      const value = Number(record.input.value || 0);
-      if (!Number.isFinite(value) || value < 0) {
-        record.input.value = '0';
-      }
-      map.set(record.character_id, Math.max(0, Number(record.input.value || 0)));
+    [1, 2].forEach((level) => {
+      const counts = ownedCountsByLevel[level] || new Map();
+      counts.forEach((count, characterId) => {
+        map.set(characterId, (map.get(characterId) || 0) + Math.max(0, Number(count) || 0));
+      });
     });
 
     selectedOwnedIds.forEach((characterId) => {
@@ -215,26 +225,51 @@
       .join('');
   }
 
-  function collectRequiredBaseMaterials(characterId, inventory, indices, counts = new Map(), visited = new Set()) {
-    return collectRequiredBaseMaterialsCounts(characterId, inventory, indices, counts, visited);
+  function renderOwnedCountCard(record, count, level) {
+    const safeCount = Math.max(0, Number(count) || 0);
+    return `
+      <article class="recommend-count-card ${safeCount > 0 ? 'is-owned' : ''}" data-owned-card="${escapeHtml(record.character_id)}" data-owned-level="${level}">
+        <div class="recommend-count-card-top">
+          <span class="recommend-count-label">${escapeHtml(record.name)}</span>
+        
+        </div>
+        <div class="recommend-count-stepper">
+          <button type="button" class="recommend-stepper-btn" data-owned-id="${escapeHtml(record.character_id)}" data-owned-delta="-1" aria-label="減少 1">−</button>
+          <span class="recommend-count-value">${safeCount}</span>
+          <button type="button" class="recommend-stepper-btn" data-owned-id="${escapeHtml(record.character_id)}" data-owned-delta="1" aria-label="增加 1">+</button>
+        </div>
+      </article>
+    `;
   }
 
   function initRecommendPage(records) {
     const indices = createIndices(records);
-    const targetLevelSelect = document.getElementById('recommendTargetLevel');
+    const targetLevelGrid = document.getElementById('recommendTargetLevelGrid');
     const ownedSelect = document.getElementById('recommendOwnedSelect');
-    const lv1Grid = document.getElementById('recommendLv1Grid');
+    const ownedTabs = document.getElementById('recommendOwnedTabs');
+    const ownedPanels = document.getElementById('recommendOwnedPanels');
     const resultList = document.getElementById('recommendResultList');
     const summary = document.getElementById('recommendSummary');
     const refreshButton = document.getElementById('recommendRefreshBtn');
     const resetButton = document.getElementById('recommendResetBtn');
     const level1Records = [...records.filter((record) => record.level === 1)].sort(compareRecords);
-    const extraRecords = [...records.filter((record) => record.level > 1)].sort(compareRecords);
-    const materialPriorityLevels = [...new Set(records.map((record) => Number(record.level)).filter((level) => Number.isFinite(level) && level >= 2))]
+    const level2Records = [...records.filter((record) => record.level === 2)].sort(compareRecords);
+    const extraRecords = [...records.filter((record) => record.level > 2)].sort(compareRecords);
+    const targetOptions = buildTargetLevelOptions(records);
+    const ownedPriorityLevels = [...new Set(records.map((record) => Number(record.level)).filter((level) => Number.isFinite(level) && level >= 2))]
       .sort((left, right) => right - left);
-    const maxLevel = Math.max(...records.map((record) => Number(record.level) || 0), 2);
     const hasTomSelect = typeof window.TomSelect === 'function';
+    const defaultTargetLevels = new Set([5]);
+    const ownedCountState = {
+      1: new Map(),
+      2: new Map(),
+    };
+    const targetState = {
+      activeOwnedLevel: 1,
+      selectedTargetLevels: new Set(defaultTargetLevels),
+    };
     let dismissedCharacterIds = new Set();
+
     const ownedSelector = hasTomSelect
       ? new window.TomSelect(ownedSelect, {
           options: [],
@@ -251,22 +286,68 @@
         })
       : null;
 
-    function renderLv1Inputs() {
-      lv1Grid.innerHTML = level1Records
-        .map((record) => `
-          <label class="recommend-count-card">
-            <span class="recommend-count-label">${escapeHtml(record.name)}</span>
-            <input type="number" min="0" step="1" value="0" data-lv1-id="${escapeHtml(record.character_id)}" class="field-input recommend-count-input">
-          </label>
-        `)
+    function renderTargetLevelCheckboxes() {
+      targetLevelGrid.innerHTML = targetOptions
+        .map(
+          (option) => `
+            <label class="checkbox-badge">
+              <input type="checkbox" value="${escapeHtml(String(option.value))}" ${targetState.selectedTargetLevels.has(option.value) ? 'checked' : ''}>
+              <span class="checkbox-badge-label badge-${option.value}">${escapeHtml(option.label)}</span>
+            </label>
+          `
+        )
+        .join('');
+
+      targetLevelGrid.querySelectorAll('input').forEach((input) => {
+        input.addEventListener('change', () => {
+          const level = Number(input.value);
+          if (input.checked) {
+            targetState.selectedTargetLevels.add(level);
+          } else {
+            targetState.selectedTargetLevels.delete(level);
+          }
+          renderRecommendations();
+        });
+      });
+    }
+
+    function renderOwnedTabs() {
+      const tabs = [
+        { level: 1, label: `${getLevelLabel(1)}`, count: countMapTotal(ownedCountState[1]) },
+        { level: 2, label: `${getLevelLabel(2)}`, count: countMapTotal(ownedCountState[2]) },
+      ];
+
+      ownedTabs.innerHTML = tabs
+        .map(
+          (tab) => `
+            <button type="button" class="comp-tree-tab-btn ${targetState.activeOwnedLevel === tab.level ? 'active' : ''}" data-owned-tab="${tab.level}">
+              ${escapeHtml(tab.label)}
+              <span class="recommend-tab-count">${tab.count}</span>
+            </button>
+          `
+        )
         .join('');
     }
 
-    function buildTargetOptions() {
-      targetLevelSelect.innerHTML = buildTargetLevelOptions(records)
-        .map((option) => `<option value="${escapeHtml(option.value)}">${escapeHtml(option.label)}</option>`)
+    function renderOwnedPanels() {
+      ownedPanels.innerHTML = [
+        { level: 1, records: level1Records },
+        { level: 2, records: level2Records },
+      ]
+        .map(({ level, records: levelRecords }) => {
+          const isActive = targetState.activeOwnedLevel === level;
+          return `
+            <div class="recommend-owned-panel ${isActive ? 'active' : 'is-hidden'}" data-owned-panel="${level}">
+              <div class="recommend-count-grid">
+                ${levelRecords
+                  .map((record) => renderOwnedCountCard(record, ownedCountState[level].get(record.character_id) || 0, level))
+                  .join('')}
+              </div>
+              ${levelRecords.length === 0 ? '<div class="empty-state">沒有可用角色。</div>' : ''}
+            </div>
+          `;
+        })
         .join('');
-      targetLevelSelect.value = String(Math.min(5, maxLevel));
     }
 
     function syncOwnedOptions() {
@@ -280,83 +361,126 @@
       ownedSelector.addOptions(options);
       ownedSelector.refreshOptions(false);
     }
+
     // 固定禁止推薦
-    const defaultDismissedIds = ['2-12','4-7','4-46','5-41','6-10','10-1']
+    const defaultDismissedIds = ['2-12', '4-7', '4-46', '5-41', '6-10', '10-1'];
 
     function renderRecommendations() {
-      const targetLevel = Number(targetLevelSelect.value || 2);
-      const lv1Inputs = Array.from(lv1Grid.querySelectorAll('[data-lv1-id]'))
-        .map((input) => ({ character_id: input.dataset.lv1Id, input }));
-      const selectedOwnedIds = ownedSelector ? ownedSelector.getValue() : Array.from(ownedSelect.selectedOptions).map((option) => option.value);
-      const inventory = createInventoryMap(records, lv1Inputs, selectedOwnedIds);
-      const allCandidates = records
-        .filter((record) => record.level === targetLevel && !defaultDismissedIds.includes(record.character_id))
-        .map((record) => {
-          const requiredCounts = collectRequiredBaseMaterialsCounts(record.character_id, new Map(inventory), indices);
-          const ownedTierCounts = collectOwnedTierCountsFromRecord(record, inventory, indices, new Map(), new Set(), true);
-          return {
-            record,
-            requiredCounts,
-            requiredText: formatRequiredBaseMaterialsFromCounts(requiredCounts, indices),
-            shortageTotal: countMapTotal(requiredCounts),
-            ownedTierCounts,
-          };
-        })
-        .sort((left, right) => {
-          const ownedCompare = compareOwnedTierCounts(left.ownedTierCounts, right.ownedTierCounts, materialPriorityLevels);
-          if (ownedCompare !== 0) {
-            return ownedCompare;
-          }
+      const selectedTargetLevels = [...targetState.selectedTargetLevels].sort((left, right) => left - right);
+      const selectedOwnedIds = ownedSelector
+        ? normalizeOwnedValues(ownedSelector.getValue())
+        : Array.from(ownedSelect.selectedOptions).map((option) => option.value);
+      const inventory = createInventoryMap(records, ownedCountState, selectedOwnedIds);
 
-          return left.shortageTotal - right.shortageTotal || compareRecords(left.record, right.record);
-        });
-      const candidates = allCandidates.filter(({ record }) => !dismissedCharacterIds.has(record.character_id)).slice(0, 6);
-
-      summary.textContent = `目標稀有度：${targetLevel}｜候選 ${candidates.length} 筆`;
-
-      if (candidates.length === 0) {
-        resultList.innerHTML = '<div class="empty-state">此稀有度沒有可推薦的角色。</div>';
+      if (selectedTargetLevels.length === 0) {
+        summary.textContent = '請先選擇至少一個目標稀有度。';
+        resultList.innerHTML = '<div class="empty-state">請先選擇至少一個目標稀有度。</div>';
         return;
       }
 
-      resultList.innerHTML = candidates
-        .map(({ record, requiredText }) => `
-          <article class="recommend-card">
-            <div class="recommend-card-top">
-              <span class="badge badge-${record.level}">${escapeHtml(getLevelLabel(record.level))}</span>
-              <strong>${escapeHtml(record.name)} ${record.key_code ? `(${escapeHtml(record.key_code)})` : ''}</strong>
-              <button type="button" class="secondary recommend-dismiss-btn" data-dismiss-character="${escapeHtml(record.character_id)}" aria-label="隱藏此推薦">×</button>
-            </div>
-            <details class="branch-details recommend-material-details">
-              <summary class="branch-summary recommend-material-summary">
-                <div class="recommend-material-summary-head">
-                  <span class="recommend-material-summary-label"></span>
+      const resultGroups = selectedTargetLevels
+        .map((targetLevel) => {
+          const candidates = records
+            .filter((record) => record.level === targetLevel && !defaultDismissedIds.includes(record.character_id))
+            .map((record) => {
+              const requiredCounts = collectRequiredBaseMaterialsCounts(record.character_id, new Map(inventory), indices);
+              const ownedTierCounts = collectOwnedTierCountsFromRecord(record, inventory, indices, new Map(), new Set(), true);
+              return {
+                record,
+                requiredCounts,
+                requiredText: formatRequiredBaseMaterialsFromCounts(requiredCounts, indices),
+                shortageTotal: countMapTotal(requiredCounts),
+                ownedTierCounts,
+              };
+            })
+            .sort((left, right) => {
+              const ownedCompare = compareOwnedTierCounts(left.ownedTierCounts, right.ownedTierCounts, ownedPriorityLevels);
+              if (ownedCompare !== 0) {
+                return ownedCompare;
+              }
 
-                </div>
-                <div class="recommend-material-preview">
-                  ${renderMaterialPreview(record, inventory, indices)}
-                  <span class="branch-toggle-hint">
-                    <img style="vertical-align: middle" width="22" height="22" src="resource/arrow_drop_down.svg" alt="展開">
-                  </span>
-                </div>
-              </summary>
-              <div class="recommend-material-body">
-                <ul class="recommend-material-tree">
-                  ${renderMaterialTree(record, inventory, indices)}
-                </ul>
+              return left.shortageTotal - right.shortageTotal || compareRecords(left.record, right.record);
+            })
+            .filter(({ record }) => !dismissedCharacterIds.has(record.character_id))
+            .slice(0, 6);
+
+          return { targetLevel, candidates };
+        })
+        .filter((group) => group.candidates.length > 0);
+
+      const targetLabelText = selectedTargetLevels.map((level) => `${level}｜${getLevelLabel(level)}`).join('、');
+      //summary.textContent = `目標稀有度：${targetLabelText || '未選擇'}｜${resultGroups.reduce((sum, group) => sum + group.candidates.length, 0)} 筆結果`;
+      renderOwnedTabs();
+      renderOwnedPanels();
+
+      if (resultGroups.length === 0) {
+        resultList.innerHTML = '<div class="empty-state">此條件沒有可推薦的角色。</div>';
+        return;
+      }
+
+      resultList.innerHTML = resultGroups
+        .map(
+          (group) => `
+            <section class="recommend-result-group">
+              <div class="recommend-result-group-head">
+                <h3 class="recommend-result-group-title">${escapeHtml(`${group.targetLevel}｜${getLevelLabel(group.targetLevel)}`)}</h3>
+                <span class="recommend-result-group-count">${group.candidates.length}</span>
               </div>
-            </details>
-            <div class="recommend-card-foot">
-              <span class="recommend-shortage ${requiredText === '無需額外素材' ? 'is-ready' : ''}">${requiredText === '無需額外素材' ? '可合成' : `缺少：${escapeHtml(requiredText)}`}</span>
-              <span class="muted"></span>
-            </div>
-          </article>
-        `)
+              <div class="recommend-result-group-body">
+                ${group.candidates
+                  .map(({ record, requiredText }) => `
+                    <article class="recommend-card">
+                      <div class="recommend-card-top">
+                        <span class="badge badge-${record.level}">${escapeHtml(getLevelLabel(record.level))}</span>
+                        <strong>${escapeHtml(record.name)} ${record.key_code ? `(${escapeHtml(record.key_code)})` : ''}</strong>
+                        <button type="button" class="secondary recommend-dismiss-btn" data-dismiss-character="${escapeHtml(record.character_id)}" aria-label="隱藏此推薦">×</button>
+                      </div>
+                      <details class="branch-details recommend-material-details">
+                        <summary class="branch-summary recommend-material-summary">
+                          <div class="recommend-material-summary-head">
+                            <span class="recommend-material-summary-label">材料</span>
+                            <span class="branch-toggle-hint">
+                              <img style="vertical-align: middle" width="22" height="22" src="resource/arrow_drop_down.svg" alt="展開">
+                            </span>
+                          </div>
+                          <div class="recommend-material-preview">
+                            ${renderMaterialPreview(record, inventory, indices)}
+                          </div>
+                        </summary>
+                        <div class="recommend-material-body">
+                          <ul class="recommend-material-tree">
+                            ${renderMaterialTree(record, inventory, indices)}
+                          </ul>
+                        </div>
+                      </details>
+                      <div class="recommend-card-foot">
+                        <span class="recommend-shortage ${requiredText === '無需額外素材' ? 'is-ready' : ''}">${requiredText === '無需額外素材' ? '可合成' : `缺少：${escapeHtml(requiredText)}`}</span>
+                        <span class="muted"></span>
+                      </div>
+                    </article>
+                  `)
+                  .join('')}
+              </div>
+            </section>
+          `
+        )
         .join('');
     }
 
-    buildTargetOptions();
-    renderLv1Inputs();
+    function setOwnedCardCount(level, characterId, delta) {
+      const current = ownedCountState[level].get(characterId) || 0;
+      const next = Math.max(0, current + delta);
+      if (next === 0) {
+        ownedCountState[level].delete(characterId);
+      } else {
+        ownedCountState[level].set(characterId, next);
+      }
+      renderRecommendations();
+    }
+
+    renderTargetLevelCheckboxes();
+    renderOwnedTabs();
+    renderOwnedPanels();
     syncOwnedOptions();
     renderRecommendations();
 
@@ -364,9 +488,13 @@
       dismissedCharacterIds = new Set();
       renderRecommendations();
     });
+
     resetButton.addEventListener('click', () => {
       dismissedCharacterIds = new Set();
-      targetLevelSelect.value = String(Math.min(2, maxLevel));
+      targetState.selectedTargetLevels = new Set([5]);
+      targetState.activeOwnedLevel = 1;
+      ownedCountState[1].clear();
+      ownedCountState[2].clear();
       if (ownedSelector) {
         ownedSelector.clear(true);
       } else {
@@ -374,14 +502,36 @@
           option.selected = false;
         });
       }
-      lv1Grid.querySelectorAll('[data-lv1-id]').forEach((input) => {
-        input.value = '0';
-      });
+      renderTargetLevelCheckboxes();
       renderRecommendations();
     });
 
-    targetLevelSelect.addEventListener('change', renderRecommendations);
-    lv1Grid.addEventListener('input', renderRecommendations);
+    ownedTabs.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-owned-tab]');
+      if (!button) {
+        return;
+      }
+
+      targetState.activeOwnedLevel = Number(button.dataset.ownedTab || 1);
+      renderRecommendations();
+    });
+
+    ownedPanels.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-owned-id][data-owned-delta]');
+      if (!button) {
+        return;
+      }
+
+      const level = Number(button.closest('[data-owned-card]')?.dataset.ownedLevel || 1);
+      const characterId = String(button.dataset.ownedId || '');
+      const delta = Number(button.dataset.ownedDelta || 0);
+      if (!characterId || !Number.isFinite(delta)) {
+        return;
+      }
+
+      setOwnedCardCount(level, characterId, delta);
+    });
+
     resultList.addEventListener('click', (event) => {
       const button = event.target.closest('[data-dismiss-character]');
       if (!button) {
@@ -391,6 +541,7 @@
       dismissedCharacterIds.add(String(button.dataset.dismissCharacter || ''));
       renderRecommendations();
     });
+
     if (ownedSelector) {
       ownedSelector.on('change', renderRecommendations);
     } else {

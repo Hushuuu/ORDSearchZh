@@ -546,6 +546,10 @@ button.success {
   margin-top: 8px;
 }
 
+.recommend-target-grid {
+  gap: 8px;
+}
+
 .recommend-count-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -555,21 +559,91 @@ button.success {
 .recommend-count-card {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   padding: 12px;
   border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(17, 24, 39, 0.62);
 }
 
+.recommend-count-card.is-owned {
+  border-color: rgba(245, 158, 11, 0.32);
+  background: rgba(245, 158, 11, 0.05);
+}
+
+.recommend-count-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+}
+
 .recommend-count-label {
   font-size: 0.95rem;
   font-weight: 700;
+  line-height: 1.3;
 }
 
-.recommend-count-input {
+.recommend-count-stepper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
   min-height: 38px;
-  padding: 8px 10px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.recommend-stepper-btn {
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-color);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.recommend-stepper-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.recommend-count-value {
+  min-width: 2ch;
+  text-align: center;
+  font-weight: 800;
+  color: var(--text-color);
+}
+
+.recommend-owned-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+}
+
+.recommend-tab-count {
+  min-width: 1.6rem;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--muted-color);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.recommend-owned-panels {
+  padding-top: 12px;
+}
+
+.recommend-owned-panel.is-hidden {
+  display: none;
 }
 
 .recommend-result-list {
@@ -599,6 +673,44 @@ button.success {
 
 .recommend-card-top strong {
   flex: 1 1 220px;
+}
+
+.recommend-result-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.recommend-result-group-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.recommend-result-group-title {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #ffd28a;
+}
+
+.recommend-result-group-count {
+  min-width: 2rem;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.14);
+  color: #ffe6b0;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.recommend-result-group-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .recommend-material-details {
