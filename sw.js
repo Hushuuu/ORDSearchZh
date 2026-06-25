@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v=260625002'; // 💡 每次更新 CSS/JS 檔案時，手動將這裡改成 v2, v3... 即可
+const CACHE_NAME = 'v=260625003'; // 💡 每次更新 CSS/JS 檔案時，手動將這裡改成 v2, v3... 即可
 // 快取清單：保持乾淨的路徑
 const ASSETS_TO_CACHE = [
   '/',
@@ -67,7 +67,7 @@ self.addEventListener('activate', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     // 💡 修正：加入 { ignoreSearch: true }
-    // 這樣當網頁請求 /css/styles.css?v=260625002 時，會自動忽略 ? 後面，完美比對到快取裡的 /css/styles.css
+    // 這樣當網頁請求 /css/styles.css?v=260625003 時，會自動忽略 ? 後面，完美比對到快取裡的 /css/styles.css
     caches.match(event.request, { ignoreSearch: true }).then(cachedResponse => {
       // 如果快取有，就用快取；沒有就走網路請求
       return cachedResponse || fetch(event.request);

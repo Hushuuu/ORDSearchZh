@@ -7,6 +7,7 @@
     escapeHtml,
     getLevelLabel,
     getPrimaryRecord,
+    getSkillTypeLabels,
   } = window.ORDApp;
 
   function buildTargetLevelOptions(records) {
@@ -488,7 +489,7 @@
               return compareRecords(left.record, right.record);
             })
             .filter(({ record }) => !dismissedCharacterIds.has(record.character_id))
-            .slice(0, 6);
+            .slice(0, 10);
 
           return { targetLevel, candidates };
         })
@@ -509,7 +510,7 @@
             <section class="recommend-result-group">
               <div class="recommend-result-group-head">
                 <h3 class="recommend-result-group-title">${escapeHtml(`${group.targetLevel}｜${getLevelLabel(group.targetLevel)}`)}</h3>
-                <span class="recommend-result-group-count">${group.candidates.length}</span>
+                <span style="display: none;" class="recommend-result-group-count">${group.candidates.length}</span>
               </div>
               <div class="recommend-result-group-body">
                 ${group.candidates
@@ -522,6 +523,9 @@
                         <span class="badge badge-${record.level}">${escapeHtml(getLevelLabel(record.level))}</span>
                         <strong>${escapeHtml(record.name)} ${record.key_code ? `(${escapeHtml(record.key_code)})` : ''}</strong>
                         <button type="button" class="secondary recommend-dismiss-btn" data-dismiss-character="${escapeHtml(record.character_id)}" aria-label="隱藏此推薦">×</button>
+                      </div>
+                      <div>
+                        <span>${getSkillTypeLabels(record.skill_types).map((label) => `<span class="badge-skill-type">${escapeHtml(label)}</span>`).join('/')}</span>
                       </div>
                       <details class="branch-details recommend-material-details">
                         <summary class="branch-summary recommend-material-summary">
