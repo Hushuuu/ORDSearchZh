@@ -95,14 +95,20 @@
     const resetFiltersBtn = document.getElementById('resetFiltersBtn');
     const toggleCompFiltersBtn = document.getElementById('toggleCompFiltersBtn');
 
-    let selectedTeamIds = readStoredArray(localStorage, 'selectedTeamIds').filter((id) => indices.byCharacterId.has(id));
-    let checkedLevels = new Set();
+    let currentTeamIdx = 0;
+    function getTeamStorageKey(idx){
+      return `selectedTeamIds_${idx}`;
+    }
+
+    //改多組隊伍
+    //let selectedTeamIds = readStoredArray(localStorage, 'selectedTeamIds').filter((id) => indices.byCharacterId.has(id));
+    let selectedTeamIds = readStoredArray(localStorage, getTeamStorageKey(currentTeamIdx)).filter((id) => indices.byCharacterId.has(id));let checkedLevels = new Set();
     let checkedSkillTypes = new Set();
     let searchKeyword = '';
     let areFiltersCollapsed = localStorage.getItem('compFiltersCollapsed') === 'true';
 
     function persistSelectedTeam() {
-      writeStoredArray(localStorage, 'selectedTeamIds', selectedTeamIds);
+      writeStoredArray(localStorage, getTeamStorageKey(currentTeamIdx), selectedTeamIds);
     }
 
     function updateFilterCollapseUI() {
@@ -358,12 +364,30 @@
     });
 
     analyzeTeamBtn.addEventListener('click', () => {
-      if (selectedTeamIds.length === 0) {
-        window.alert('請先在角色庫中選取角色加入隊伍！');
-        return;
-      }
-      writeStoredArray(sessionStorage, 'selectedTeamIds', selectedTeamIds);
+      // if (selectedTeamIds.length === 0) {
+      //   window.alert('請先在角色庫中選取角色加入隊伍！');
+      //   return;
+      // }
+      // writeStoredArray(sessionStorage, 'selectedTeamIds', selectedTeamIds);
       window.location.href = 'comp_tree.html';
+    });
+    // 新增：隊伍分頁切換邏輯
+    const teamTabButtons = document.querySelectorAll('.team-tab-btn');
+    console.log('teamTabButtons:', teamTabButtons);
+    teamTabButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // 切換 active 樣式
+        teamTabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // 更新當前隊伍索引並重新讀取資料
+        currentTeamIdx = Number(btn.dataset.teamIdx);
+        selectedTeamIds = readStoredArray(localStorage, getTeamStorageKey(currentTeamIdx)).filter((id) => indices.byCharacterId.has(id));
+        
+        // 重新渲染畫面
+        renderTeamPanel();
+        renderCharactersList();
+      });
     });
 
     renderLevelCheckboxes();
@@ -375,6 +399,7 @@
 
   function initCompTreePage(records) {
     const indices = createIndices(records);
+    const compTreeGroupTabs = document.getElementById('compTreeGroupTabs');
     const compTreeTabs = document.getElementById('compTreeTabs');
     const compTreeEmptyState = document.getElementById('compTreeEmptyState');
     const compTreeContent = document.getElementById('compTreeContent');
@@ -383,18 +408,57 @@
     const compDownwardContainer = document.getElementById('compDownwardContainer');
     const compTreeTeamMaterials = document.getElementById('compTreeTeamMaterials');
 
-    let selectedTeamIds = readStoredArray(sessionStorage, 'selectedTeamIds').filter((id) => indices.byCharacterId.has(id));
-    if (selectedTeamIds.length === 0) {
+    // let selectedTeamIds = readStoredArray(sessionStorage, 'selectedTeamIds').filter((id) => indices.byCharacterId.has(id));
+    // if (selectedTeamIds.length === 0) {
+    //   compTreeEmptyState.classList.remove('is-hidden');
+    //   compTreeContent.classList.add('is-hidden');
+    //   return;
+    // }
+
+    // compTreeEmptyState.classList.add('is-hidden');
+    // compTreeContent.classList.remove('is-hidden');
+
+    // const { level0Items, level1Items } = getTeamMaterialGroups(selectedTeamIds, indices);
+    // let activeIndex = 0;
+    // 1. 定義讀取 3 個隊伍的 Key
+    function getTeamStorageKey(idx) {
+      return `selectedTeamIds_${idx}`;
+    }
+
+    // 2. 狀態管理
+    let currentMainTeamIdx = 0; // 當前選擇的大隊伍 (0, 1, 2)
+    let activeIndex = 0;        // 當前大隊伍中被選中的角色索引
+
+    // 宣告目前隊伍的相關資料變數
+    let selectedTeamIds = [];
+    let level0Items = [];
+    let level1Items = [];
+
+    // 3. 更新目前所選隊伍的資料與材料計算
+    function updateCurrentTeamData() {
+      selectedTeamIds = readStoredArray(localStorage, getTeamStorageKey(currentMainTeamIdx))
+        .filter((id) => indices.byCharacterId.has(id));
+      
+      const materials = getTeamMaterialGroups(selectedTeamIds, indices);
+      level0Items = materials.level0Items;
+      level1Items = materials.level1Items;
+    }
+
+    // 檢查是否有任何一隊有資料
+    const hasAnyData = [0, 1, 2].some(idx => 
+      readStoredArray(localStorage, getTeamStorageKey(idx)).filter((id) => indices.byCharacterId.has(id)).length > 0
+    );
+
+    if (!hasAnyData) {
       compTreeEmptyState.classList.remove('is-hidden');
       compTreeContent.classList.add('is-hidden');
+      if (compTreeGroupTabs) compTreeGroupTabs.style.display = 'none';
       return;
     }
 
+    // 確保內容區塊有打開
     compTreeEmptyState.classList.add('is-hidden');
     compTreeContent.classList.remove('is-hidden');
-
-    const { level0Items, level1Items } = getTeamMaterialGroups(selectedTeamIds, indices);
-    let activeIndex = 0;
 
     function renderCompNodeCard(record, options = {}) {
       // const titleMarkup = options.navigateable
@@ -527,7 +591,43 @@
           }
         });
       });
+
+      // 更新總材料面版
+      compTreeTeamMaterials.innerHTML = renderTeamSummaryMaterials(level1Items, level0Items);
+      
+      // 預設渲染該隊第一個角色
+      const firstRecord = indices.byCharacterId.get(selectedTeamIds[activeIndex]);
+      if (firstRecord) {
+        renderCompTree(firstRecord);
+      }
     }
+    // 4. 初始化/切換大隊伍的邏輯
+    function switchMainTeam(teamIdx) {
+      //console.log(`切換到隊伍 ${teamIdx + 1}`);
+      currentMainTeamIdx = teamIdx;
+      activeIndex = 0; // 切換隊伍時重置角色選擇到第一個
+
+      // 切換大 Tab 活化狀態
+      compTreeGroupTabs.querySelectorAll('.comp-tree-tab-btn').forEach(btn => {
+        if (Number(btn.dataset.mainTeamIdx) === currentMainTeamIdx) {
+          btn.classList.add('active');
+        } else {
+          btn.classList.remove('active');
+        }
+      });
+      compTreeRootSummary.innerHTML = ''
+      compDownwardContainer.innerHTML = ''
+      updateCurrentTeamData();
+      renderTabs();
+    }
+
+    // 綁定大隊伍切換事件
+    compTreeGroupTabs.querySelectorAll('[data-main-team-idx]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = Number(btn.dataset.mainTeamIdx);
+        switchMainTeam(idx);
+      });
+    });
 
     function handleCompTreeNavigation(event) {
       const target = event.target.closest('[data-navigate-character]');
@@ -545,13 +645,18 @@
     }
 
     compDownwardContainer.addEventListener('click', handleCompTreeNavigation);
-
-    renderTabs();
-    compTreeTeamMaterials.innerHTML = renderTeamSummaryMaterials(level1Items, level0Items);
-    const firstRecord = indices.byCharacterId.get(selectedTeamIds[0]);
-    if (firstRecord) {
-      renderCompTree(firstRecord);
+    let defaultTeamIdx = 0;
+    for (let i = 0; i < 3; i++) {
+      const savedIds = readStoredArray(localStorage, getTeamStorageKey(i))
+        .filter((id) => indices.byCharacterId.has(id));
+      if (savedIds.length > 0) {
+        defaultTeamIdx = i;
+        break; // 找到第一個有資料的隊伍就跳出
+      }
     }
+
+    // 依據偵測結果進行預設顯示
+    switchMainTeam(defaultTeamIdx);
   }
 
   window.ORDApp.initCompPage = initCompPage;

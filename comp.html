@@ -6,12 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ORD 隊伍組成</title>
     <link rel="manifest" href="/manifest.json">
-    <script src="/pwa-init.js?v=260625010"></script>
+    <script src="/pwa-init.js?v=260626002"></script>
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     <link rel="apple-touch-icon" href="/resource/192x192.png">
-    <link rel="stylesheet" href="css/styles.css?v=260625010">
-    <script src="js/shared/wc-navbar.js?v=260625010"></script>
+    <link rel="stylesheet" href="css/styles.css?v=260626002">
+    <script src="js/shared/wc-navbar.js?v=260626002"></script>
+    <style>
+    .team-tab-btn {
+        background-color: #2a2a2a; /* 根據你原本的暗色背景調整 */
+        color: #888;
+        border: 1px solid #444;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .team-tab-btn:hover {
+        color: #fff;
+        border-color: #666;
+    }
+
+    .team-tab-btn.active {
+        background-color: var(--primary-color, #ffd28a); /* 或是使用你專案的 primary color */
+        color: #121212;
+        border-color: var(--primary-color, #ffd28a);
+        font-weight: bold;
+    }
+    </style>
 </head>
 
 <body data-page="comp">
@@ -36,6 +58,11 @@
                         <button id="analyzeTeamBtn" class="success full-width-btn" type="button">分析隊伍</button>
                         <button id="clearTeamBtn" class="secondary full-width-btn" type="button"
                             style="margin-top: 8px;">清空隊伍</button>
+                    </div>
+                    <div class="team-tabs" style="display: flex; gap: 4px; margin-bottom: 12px;">
+                        <button type="button" class="team-tab-btn active" data-team-idx="0" style="flex: 1; padding: 6px; font-size: 0.85rem;">隊伍 1</button>
+                        <button type="button" class="team-tab-btn" data-team-idx="1" style="flex: 1; padding: 6px; font-size: 0.85rem;">隊伍 2</button>
+                        <button type="button" class="team-tab-btn" data-team-idx="2" style="flex: 1; padding: 6px; font-size: 0.85rem;">隊伍 3</button>
                     </div>
                     <div id="selectedTeamList" class="team-list-container">
                         <div class="empty-state">尚未選取任何角色。</div>
@@ -114,10 +141,10 @@
         </div>
     </div>
 
-    <script src="js/ord_data.js?v=260625010"></script>
-    <script src="js/shared/app-shared.js?v=260625010"></script>
-    <script src="js/pages/comp-page.js?v=260625010"></script>
-    <script src="js/app.js?v=260625010"></script>
+    <script src="js/ord_data.js?v=260626002"></script>
+    <script src="js/shared/app-shared.js?v=260626002"></script>
+    <script src="js/pages/comp-page.js?v=260626002"></script>
+    <script src="js/app.js?v=260626002"></script>
 </body>
 
 </html>

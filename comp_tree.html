@@ -6,12 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ORD - 隊伍組成分析</title>
   <link rel="manifest" href="/manifest.json">
-  <script src="/pwa-init.js?v=260625010"></script>
+  <script src="/pwa-init.js?v=260626002"></script>
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="apple-touch-icon" href="/resource/192x192.png">
-  <link rel="stylesheet" href="css/styles.css?v=260625010">
-  <script src="js/shared/wc-navbar.js?v=260625010"></script>
+  <link rel="stylesheet" href="css/styles.css?v=260626002">
+  <script src="js/shared/wc-navbar.js?v=260626002"></script>
 </head>
 
 <body data-page="comp_tree">
@@ -30,6 +30,11 @@
         <p class="panel-desc">點擊隊伍角色查看各自的合成樹</p>
       </div>
       <div class="panel-body">
+        <div id="compTreeGroupTabs" class="comp-tree-tabs-container" style="margin-bottom: 12px; border-bottom: 2px solid #333; padding-bottom: 8px;">
+          <button type="button" class="comp-tree-tab-btn active" data-main-team-idx="0">隊伍 1</button>
+          <button type="button" class="comp-tree-tab-btn" data-main-team-idx="1">隊伍 2</button>
+          <button type="button" class="comp-tree-tab-btn" data-main-team-idx="2">隊伍 3</button>
+        </div>
         <!-- 角色頁簽/標籤列 -->
         <div id="compTreeTabs" class="comp-tree-tabs-container">
           <!-- JS 動態生成標籤 -->
@@ -50,7 +55,7 @@
           </div>
 
           <div id="compTreeResultTitle" class="summary-text"
-            style="font-size: 1.15rem; font-weight: 700; color: #ffd28a;"></div>
+            style="display:none; font-size: 1.15rem; font-weight: 700; color: #ffd28a;"></div>
           <div id="compTreeRootSummary"></div>
           <div id="compDownwardContainer"></div>
         </div>
@@ -58,10 +63,10 @@
     </section>
   </div>
 
-  <script src="js/ord_data.js?v=260625010"></script>
-  <script src="js/shared/app-shared.js?v=260625010"></script>
-  <script src="js/pages/comp-page.js?v=260625010"></script>
-  <script src="js/app.js?v=260625010"></script>
+  <script src="js/ord_data.js?v=260626002"></script>
+  <script src="js/shared/app-shared.js?v=260626002"></script>
+  <script src="js/pages/comp-page.js?v=260625012"></script>
+  <script src="js/app.js?v=260626002"></script>
 </body>
 
 </html>

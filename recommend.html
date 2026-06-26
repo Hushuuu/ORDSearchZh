@@ -6,13 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ORD 合成推薦</title>
   <link rel="manifest" href="/manifest.json">
-  <script src="/pwa-init.js?v=260625010"></script>
+  <script src="/pwa-init.js?v=260626002"></script>
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <link rel="apple-touch-icon" href="/resource/192x192.png">
   <link rel="stylesheet" href="css/tom-select.css">
-  <link rel="stylesheet" href="css/styles.css?v=260625010">
-  <script src="js/shared/wc-navbar.js?v=260625010"></script>
+  <link rel="stylesheet" href="css/styles.css?v=260626002">
+  <script src="js/shared/wc-navbar.js?v=260626002"></script>
   <style>
     /* 2. 頂部進度條外殼（灰色軌道） */
     .card-top-progress-container {
@@ -46,6 +46,9 @@
       padding-top: 12px;
       /* 依你實際視覺畫面微調，避免文字離頂部太近 */
     }
+    .field-group.collapsed {
+      display: none;
+    }
   </style>
 </head>
 
@@ -66,10 +69,14 @@
       </div> -->
       <div class="panel-body">
         <div class="controls-grid">
-          <label class="field-group" style="grid-column: span 4;">
+          <div class="field-group" style="grid-column: span 4;">
             <span class="field-label">目標稀有度</span>
             <div id="recommendTargetLevelGrid" class="checkbox-badge-grid recommend-target-grid"></div>
-          </label>
+          </div>
+          <div class="field-group" style="grid-column: span 4;">
+            <span class="field-label">技能類型</span>
+            <div id="recommendTargetSkillGrid" class="checkbox-badge-grid recommend-target-grid"></div>
+          </div>
           <div class="field-group" style="grid-column: span 3;">
             <span class="field-label">擁有其他角色</span>
             <select id="recommendOwnedSelect" multiple class=""></select>
@@ -80,6 +87,7 @@
             <div class="controls-actions">
               <button id="recommendRefreshBtn" type="button">重新推薦</button>
               <button id="recommendResetBtn" type="button" class="secondary">重置條件</button>
+              <button id="collapseFilterBtn" type="button" class="secondary">收合條件</button>
             </div>
           </div>
         </div>
@@ -110,11 +118,11 @@
     </section>
   </div>
 
-  <script src="js/ord_data.js?v=260625010"></script>
+  <script src="js/ord_data.js?v=260626002"></script>
   <script src="js/tom-select.complete.min.js"></script>
-  <script src="js/shared/app-shared.js?v=260625010"></script>
-  <script src="js/pages/recommend-page.js?v=260625010"></script>
-  <script src="js/app.js?v=260625010"></script>
+  <script src="js/shared/app-shared.js?v=260626002"></script>
+  <script src="js/pages/recommend-page.js?v=260626002"></script>
+  <script src="js/app.js?v=260626002"></script>
 </body>
 
 </html>

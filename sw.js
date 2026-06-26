@@ -1,4 +1,4 @@
-const CACHE_NAME = 'v=260625010'; // 💡 每次更新 CSS/JS 檔案時，手動將這裡改成 v2, v3... 即可
+const CACHE_NAME = 'v=260626002'; // 💡 每次更新 CSS/JS 檔案時，手動將這裡改成 v2, v3... 即可
 // 快取清單：保持乾淨的路徑
 const ASSETS_TO_CACHE = [
   '/index.html',
@@ -109,7 +109,7 @@ self.addEventListener('fetch', event => {
         return cachedResponse; // 快取精準命中（含版本號或乾淨網址）
       }
       
-      // 網路下載新資源（例如帶有新版本號的 app.js?v=260625010）
+      // 網路下載新資源（例如帶有新版本號的 app.js?v=260626002）
       return fetch(event.request).then(response => {
         if (!response || response.status !== 200 || response.type !== 'basic') {
           return response;

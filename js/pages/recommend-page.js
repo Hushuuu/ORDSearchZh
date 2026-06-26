@@ -8,6 +8,7 @@
     getLevelLabel,
     getPrimaryRecord,
     getSkillTypeLabels,
+    createSkillTypeOptions,
   } = window.ORDApp;
 
   function buildTargetLevelOptions(records) {
@@ -319,6 +320,7 @@
   function initRecommendPage(records) {
     const indices = createIndices(records);
     const targetLevelGrid = document.getElementById('recommendTargetLevelGrid');
+    const targetSkillGrid = document.getElementById('recommendTargetSkillGrid');
     const ownedSelect = document.getElementById('recommendOwnedSelect');
     const ownedTabs = document.getElementById('recommendOwnedTabs');
     const ownedPanels = document.getElementById('recommendOwnedPanels');
@@ -326,6 +328,7 @@
     const summary = document.getElementById('recommendSummary');
     const refreshButton = document.getElementById('recommendRefreshBtn');
     const resetButton = document.getElementById('recommendResetBtn');
+    const collapseFilterButton = document.getElementById('collapseFilterBtn');
     const level1Records = [...records.filter((record) => record.level === 1)].sort(compareRecords);
     const level2Records = [...records.filter((record) => record.level === 2)].sort(compareRecords);
     const extraRecords = [...records.filter((record) => record.level > 2)].sort(compareRecords);
@@ -341,6 +344,7 @@
     const targetState = {
       activeOwnedLevel: 1,
       selectedTargetLevels: new Set(defaultTargetLevels),
+      checkedSkillTypes: new Set(),
     };
     let dismissedCharacterIds = new Set();
 
@@ -435,6 +439,30 @@
       ownedSelector.addOptions(options);
       ownedSelector.refreshOptions(false);
     }
+    //技能篩選
+    function renderSkillTypeCheckboxes() {
+      targetSkillGrid.innerHTML = createSkillTypeOptions()
+        .map(
+          ({ value, label }) => `
+            <label class="checkbox-badge">
+              <input type="checkbox" value="${escapeHtml(value)}" ${targetState.checkedSkillTypes.has(value) ? 'checked' : ''}>
+              <span class="checkbox-badge-label">${escapeHtml(label)}</span>
+            </label>
+          `
+        )
+        .join('');
+
+      targetSkillGrid.querySelectorAll('input').forEach((input) => {
+        input.addEventListener('change', () => {
+          if (input.checked) {
+            targetState.checkedSkillTypes.add(input.value);
+          } else {
+            targetState.checkedSkillTypes.delete(input.value);
+          }
+          renderRecommendations();
+        });
+      });
+    }
 
     // 固定禁止推薦
     const defaultDismissedIds = ['2-12', '4-7', '4-46', '5-41', '6-10', '10-1'];
@@ -445,6 +473,7 @@
         ? normalizeOwnedValues(ownedSelector.getValue())
         : Array.from(ownedSelect.selectedOptions).map((option) => option.value);
       const inventory = createInventoryMap(records, ownedCountState, selectedOwnedIds);
+      const selectedTargetSkillTypes = [...targetState.checkedSkillTypes];
 
       renderOwnedTabs();
       renderOwnedPanels();
@@ -458,7 +487,9 @@
       const resultGroups = selectedTargetLevels
         .map((targetLevel) => {
           const candidates = records
-            .filter((record) => record.level === targetLevel && !defaultDismissedIds.includes(record.character_id))
+            .filter((record) => record.level === targetLevel 
+            && !defaultDismissedIds.includes(record.character_id)
+            && (selectedTargetSkillTypes.length === 0 || record.skill_types?.some((skillType) => selectedTargetSkillTypes.includes(skillType))))
             .map((record) => {
               // 1. 計算完成度分數
               const stats = analyzeStructure(record, new Map(inventory), indices, undefined,undefined,true);
@@ -573,6 +604,7 @@
     }
 
     renderTargetLevelCheckboxes();
+    renderSkillTypeCheckboxes();
     renderOwnedTabs();
     renderOwnedPanels();
     syncOwnedOptions();
@@ -585,7 +617,8 @@
 
     resetButton.addEventListener('click', () => {
       dismissedCharacterIds = new Set();
-      targetState.selectedTargetLevels = defaultTargetLevels;
+      targetState.selectedTargetLevels = new Set();
+      targetState.checkedSkillTypes = new Set();
       targetState.activeOwnedLevel = 1;
       ownedCountState[1].clear();
       ownedCountState[2].clear();
@@ -597,7 +630,17 @@
         });
       }
       renderTargetLevelCheckboxes();
+      console.log('重置技能篩選');
+      renderSkillTypeCheckboxes();
+      console.log('重置技能篩選renderSkillTypeCheckboxes');
       renderRecommendations();
+      //重置條件區顯示
+      const filterSections = document.querySelectorAll('.controls-grid .field-group');
+      if (filterSections) {
+        filterSections[0].classList.remove('collapsed');
+        filterSections[1].classList.remove('collapsed');
+        collapseFilterButton.innerText = '收合條件';
+      }
     });
 
     ownedTabs.addEventListener('click', (event) => {
@@ -641,6 +684,15 @@
     } else {
       ownedSelect.addEventListener('change', renderRecommendations);
     }
+
+    collapseFilterButton.addEventListener('click', () => {
+      const filterSections = document.querySelectorAll('.controls-grid .field-group');
+      if (filterSections) {
+        filterSections[0].classList.toggle('collapsed');
+        filterSections[1].classList.toggle('collapsed');
+        collapseFilterButton.innerText = collapseFilterButton.innerText === '收合條件' ? '展開條件' : '收合條件';
+      }
+    });
   }
 
   window.ORDApp.initRecommendPage = initRecommendPage;
